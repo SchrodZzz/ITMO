@@ -1,0 +1,3 @@
+cd prog/term_2/С++/02_Hello
+g++ -std=c++17 -DNAME=\"Bob\" -o result main.cpp hello.cpp here.cpp bye.cpp
+g++ -std=c++17 -o result main.cpp hello.cpp here.cpp bye.cpp

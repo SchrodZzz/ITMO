@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/schrod/prog/term_2/С++/01_Basics/headers/header.h
+includes.h
+/Users/schrod/prog/term_2/С++/01_Basics/headers/includes.h
+
+/Users/schrod/prog/term_2/С++/01_Basics/headers/includes.h
+string
+-
+iostream
+-
+
+/Users/schrod/prog/term_2/С++/01_Basics/main.cpp
+headers/header.h
+/Users/schrod/prog/term_2/С++/01_Basics/headers/header.h
+
+/Users/schrod/prog/term_2/С++/01_Basics/source/utilities.cpp
+../headers/header.h
+/Users/schrod/prog/term_2/С++/01_Basics/headers/header.h
+
