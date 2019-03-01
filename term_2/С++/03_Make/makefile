@@ -1,8 +1,8 @@
 override CXXFLAGS += -std=c++17
 override LDFLAGS  += -lm
 
-DEFINE_NAME  := -DNAME=\"Bob\"
-PLATFORM     := $(shell uname)
+DEFINE_NAME  	 := -DNAME=\"Bob\"
+PLATFORM     	 := $(shell uname)
 MAIN_OBJ 	 := main.o
 LIB_NAME	 := mylib
 LIBVER   	 := 5.1.10
@@ -55,7 +55,7 @@ else ifeq ($(PLATFORM), Linux)
 	make dyn_lib_linux
 	./lib${LIB_NAME}.so.${LIBVER}
 else
-	@echo "\n\t>unsopprted OS -_-\n"
+	@echo "\n\t>unsupported OS -_-\n"
 endif
 	make clean
 	@echo "\n DONE!!! \n"
