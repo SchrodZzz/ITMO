@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/schrod/prog/term_2/С++/05_Memory/headers/TestUtil.h
+Util.hpp
+/Users/schrod/prog/term_2/С++/05_Memory/headers/Util.hpp
+
+/Users/schrod/prog/term_2/С++/05_Memory/headers/Util.hpp
+algorithm
+-
+iostream
+-
+string
+-
+limits
+-
+
+/Users/schrod/prog/term_2/С++/05_Memory/sourses/GetLineTest.cpp
+sstream
+-
+../headers/TestUtil.h
+/Users/schrod/prog/term_2/С++/05_Memory/headers/TestUtil.h
+

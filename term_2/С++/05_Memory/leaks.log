@@ -1,0 +1,2183 @@
+==4495== Memcheck, a memory error detector
+==4495== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==4495== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==4495== Command: ./main
+==4495== Parent PID: 4458
+==4495== 
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10000F3B0: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A035: _dyld_start (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x100044AAE: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x1000114E9: dyld::checkEnvironmentVariables(char const**) (in /usr/lib/dyld)
+==4495==    by 0x10000F3B9: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A035: _dyld_start (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x100044AAE: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL25checkEnvironmentVariablesEPPKc
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10000BBD2: dyld::processDyldEnvironmentVariable(char const*, char const*, char const*) (in /usr/lib/dyld)
+==4495==    by 0x1000115F6: dyld::checkEnvironmentVariables(char const**) (in /usr/lib/dyld)
+==4495==    by 0x10000F3B9: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A035: _dyld_start (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x100044AAE: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld30processDyldEnvironmentVariableEPKcS1_S1_
+   fun:_ZN4dyldL25checkEnvironmentVariablesEPPKc
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10000F3C1: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A035: _dyld_start (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x100044AAE: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x100013585: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x100012EF1: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000CAEE: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000C642: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==4495==    by 0x100010430: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A035: _dyld_start (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x100044AAE: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x100013585: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x100012EF1: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000CAEE: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000C67D: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==4495==    by 0x100010430: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A035: _dyld_start (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x100044AAE: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10004C447: bcmp (in /usr/lib/dyld)
+==4495==    by 0x100020155: ImageLoaderMachO::validateFirstPages(linkedit_data_command const*, int, unsigned char const*, unsigned long, long long, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100025F25: ImageLoaderMachOCompressed::instantiateFromFile(char const*, int, unsigned char const*, unsigned long, unsigned long long, unsigned long long, stat const&, unsigned int, unsigned int, linkedit_data_command const*, encryption_info_command const*, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001F1A3: ImageLoaderMachO::instantiateFromFile(char const*, int, unsigned char const*, unsigned long, unsigned long long, unsigned long long, stat const&, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10000CF71: dyld::loadPhase6(int, stat const&, char const*, dyld::LoadContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100013EBF: dyld::loadPhase5(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x100013A3F: dyld::loadPhase4(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10001378E: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x100012EF1: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000CAEE: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000C67D: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==4495==    by 0x100014861: dyld::libraryLocator(char const*, bool, char const*, ImageLoader::RPathChain const*, bool, unsigned int&) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x10000CC6A: dyld::loadPhase6(int, stat const&, char const*, dyld::LoadContext const&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:bcmp
+   fun:_ZN16ImageLoaderMachO18validateFirstPagesEPK21linkedit_data_commandiPKhmxRKN11ImageLoader11LinkContextE
+   fun:_ZN26ImageLoaderMachOCompressed19instantiateFromFileEPKciPKhmyyRK4statjjPK21linkedit_data_commandPK23encryption_info_commandRKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO19instantiateFromFileEPKciPKhmyyRK4statRKN11ImageLoader11LinkContextE
+   fun:_ZN4dyldL10loadPhase6EiRK4statPKcRKNS_11LoadContextE
+   fun:_ZN4dyldL10loadPhase5EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase4EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyldL14libraryLocatorEPKcbS1_PKN11ImageLoader10RPathChainEbRj
+}
+==4495== Use of uninitialised value of size 8
+==4495==    at 0x10004C463: bcmp (in /usr/lib/dyld)
+==4495==    by 0x100020155: ImageLoaderMachO::validateFirstPages(linkedit_data_command const*, int, unsigned char const*, unsigned long, long long, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100025F25: ImageLoaderMachOCompressed::instantiateFromFile(char const*, int, unsigned char const*, unsigned long, unsigned long long, unsigned long long, stat const&, unsigned int, unsigned int, linkedit_data_command const*, encryption_info_command const*, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001F1A3: ImageLoaderMachO::instantiateFromFile(char const*, int, unsigned char const*, unsigned long, unsigned long long, unsigned long long, stat const&, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10000CF71: dyld::loadPhase6(int, stat const&, char const*, dyld::LoadContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100013EBF: dyld::loadPhase5(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x100013A3F: dyld::loadPhase4(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10001378E: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x100012EF1: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000CAEE: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000C67D: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==4495==    by 0x100014861: dyld::libraryLocator(char const*, bool, char const*, ImageLoader::RPathChain const*, bool, unsigned int&) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x10000CC6A: dyld::loadPhase6(int, stat const&, char const*, dyld::LoadContext const&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:bcmp
+   fun:_ZN16ImageLoaderMachO18validateFirstPagesEPK21linkedit_data_commandiPKhmxRKN11ImageLoader11LinkContextE
+   fun:_ZN26ImageLoaderMachOCompressed19instantiateFromFileEPKciPKhmyyRK4statjjPK21linkedit_data_commandPK23encryption_info_commandRKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO19instantiateFromFileEPKciPKhmyyRK4statRKN11ImageLoader11LinkContextE
+   fun:_ZN4dyldL10loadPhase6EiRK4statPKcRKNS_11LoadContextE
+   fun:_ZN4dyldL10loadPhase5EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase4EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyldL14libraryLocatorEPKcbS1_PKN11ImageLoader10RPathChainEbRj
+}
+==4495== Use of uninitialised value of size 8
+==4495==    at 0x10004C468: bcmp (in /usr/lib/dyld)
+==4495==    by 0x100020155: ImageLoaderMachO::validateFirstPages(linkedit_data_command const*, int, unsigned char const*, unsigned long, long long, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100025F25: ImageLoaderMachOCompressed::instantiateFromFile(char const*, int, unsigned char const*, unsigned long, unsigned long long, unsigned long long, stat const&, unsigned int, unsigned int, linkedit_data_command const*, encryption_info_command const*, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001F1A3: ImageLoaderMachO::instantiateFromFile(char const*, int, unsigned char const*, unsigned long, unsigned long long, unsigned long long, stat const&, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10000CF71: dyld::loadPhase6(int, stat const&, char const*, dyld::LoadContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100013EBF: dyld::loadPhase5(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x100013A3F: dyld::loadPhase4(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10001378E: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x100012EF1: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000CAEE: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000C67D: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==4495==    by 0x100014861: dyld::libraryLocator(char const*, bool, char const*, ImageLoader::RPathChain const*, bool, unsigned int&) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x10000CC6A: dyld::loadPhase6(int, stat const&, char const*, dyld::LoadContext const&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:bcmp
+   fun:_ZN16ImageLoaderMachO18validateFirstPagesEPK21linkedit_data_commandiPKhmxRKN11ImageLoader11LinkContextE
+   fun:_ZN26ImageLoaderMachOCompressed19instantiateFromFileEPKciPKhmyyRK4statjjPK21linkedit_data_commandPK23encryption_info_commandRKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO19instantiateFromFileEPKciPKhmyyRK4statRKN11ImageLoader11LinkContextE
+   fun:_ZN4dyldL10loadPhase6EiRK4statPKcRKNS_11LoadContextE
+   fun:_ZN4dyldL10loadPhase5EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase4EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyldL14libraryLocatorEPKcbS1_PKN11ImageLoader10RPathChainEbRj
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x100020158: ImageLoaderMachO::validateFirstPages(linkedit_data_command const*, int, unsigned char const*, unsigned long, long long, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100025F25: ImageLoaderMachOCompressed::instantiateFromFile(char const*, int, unsigned char const*, unsigned long, unsigned long long, unsigned long long, stat const&, unsigned int, unsigned int, linkedit_data_command const*, encryption_info_command const*, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001F1A3: ImageLoaderMachO::instantiateFromFile(char const*, int, unsigned char const*, unsigned long, unsigned long long, unsigned long long, stat const&, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10000CF71: dyld::loadPhase6(int, stat const&, char const*, dyld::LoadContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100013EBF: dyld::loadPhase5(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x100013A3F: dyld::loadPhase4(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10001378E: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x100012EF1: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000CAEE: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==4495==    by 0x10000C67D: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==4495==    by 0x100014861: dyld::libraryLocator(char const*, bool, char const*, ImageLoader::RPathChain const*, bool, unsigned int&) (in /usr/lib/dyld)
+==4495==    by 0x10001C755: ImageLoader::recursiveLoadLibraries(ImageLoader::LinkContext const&, bool, ImageLoader::RPathChain const&, char const*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x10000CC6A: dyld::loadPhase6(int, stat const&, char const*, dyld::LoadContext const&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN16ImageLoaderMachO18validateFirstPagesEPK21linkedit_data_commandiPKhmxRKN11ImageLoader11LinkContextE
+   fun:_ZN26ImageLoaderMachOCompressed19instantiateFromFileEPKciPKhmyyRK4statjjPK21linkedit_data_commandPK23encryption_info_commandRKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO19instantiateFromFileEPKciPKhmyyRK4statRKN11ImageLoader11LinkContextE
+   fun:_ZN4dyldL10loadPhase6EiRK4statPKcRKNS_11LoadContextE
+   fun:_ZN4dyldL10loadPhase5EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase4EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyldL14libraryLocatorEPKcbS1_PKN11ImageLoader10RPathChainEbRj
+   fun:_ZN11ImageLoader22recursiveLoadLibrariesERKNS_11LinkContextEbRKNS_10RPathChainEPKc
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10020E00B: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020DF2B: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020F151: df_bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020EF31: df (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020D87F: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020D732: init (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x1003E035A: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1003E0478: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006C744D: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df_bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10020E00B: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020DF2B: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020F1E1: df_bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020EF31: df (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020D87F: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020D732: init (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x1003E035A: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1003E0478: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006C744D: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df_bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10020E00B: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020DF2B: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020EF90: df (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020D87F: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020D732: init (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x1003E035A: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1003E0478: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006C744D: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10020E00B: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020F03F: df (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020D87F: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020D732: init (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x1003E035A: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1003E0478: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006C744D: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10020F323: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020D93E: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020D732: init (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x1003E035A: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1003E0478: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006C744D: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10020E00B: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020F54B: generate (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x1003E04E3: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006C744D: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10020E00B: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020F2A6: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020F596: generate (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x1003E04E3: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006C744D: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10020F2C3: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020F596: generate (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x1003E04E3: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006C744D: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x10020F323: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x10020F596: generate (in /usr/lib/system/libcorecrypto.dylib)
+==4495==    by 0x1003E04E3: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006C744D: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x1006CF24C: objc_initializeClassPair_internal(objc_class*, char const*, objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x100670650: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495==    by 0x10001078E: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZL33objc_initializeClassPair_internalP10objc_classPKcS0_S0_
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==4495== Use of uninitialised value of size 8
+==4495==    at 0x1006CF24E: objc_initializeClassPair_internal(objc_class*, char const*, objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x100670650: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495==    by 0x10001078E: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_ZL33objc_initializeClassPair_internalP10objc_classPKcS0_S0_
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==4495== Use of uninitialised value of size 8
+==4495==    at 0x1006CF260: objc_initializeClassPair_internal(objc_class*, char const*, objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x100670650: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495==    by 0x10001078E: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_ZL33objc_initializeClassPair_internalP10objc_classPKcS0_S0_
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==4495== Use of uninitialised value of size 8
+==4495==    at 0x1006CF27E: objc_initializeClassPair_internal(objc_class*, char const*, objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x100670650: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495==    by 0x10001078E: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_ZL33objc_initializeClassPair_internalP10objc_classPKcS0_S0_
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==4495== Use of uninitialised value of size 8
+==4495==    at 0x1006CF28C: objc_initializeClassPair_internal(objc_class*, char const*, objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x100670650: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495==    by 0x10001078E: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_ZL33objc_initializeClassPair_internalP10objc_classPKcS0_S0_
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x1006CF24C: objc_initializeClassPair_internal(objc_class*, char const*, objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x100670669: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495==    by 0x10001078E: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZL33objc_initializeClassPair_internalP10objc_classPKcS0_S0_
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==4495== Use of uninitialised value of size 8
+==4495==    at 0x1006CF24E: objc_initializeClassPair_internal(objc_class*, char const*, objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x100670669: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495==    by 0x10001078E: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_ZL33objc_initializeClassPair_internalP10objc_classPKcS0_S0_
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==4495== Use of uninitialised value of size 8
+==4495==    at 0x1006CF260: objc_initializeClassPair_internal(objc_class*, char const*, objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x100670669: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495==    by 0x10001078E: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_ZL33objc_initializeClassPair_internalP10objc_classPKcS0_S0_
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==4495== Use of uninitialised value of size 8
+==4495==    at 0x1006CF27E: objc_initializeClassPair_internal(objc_class*, char const*, objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x100670669: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495==    by 0x10001078E: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==    by 0x10000A4F5: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_ZL33objc_initializeClassPair_internalP10objc_classPKcS0_S0_
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==4495== Conditional jump or move depends on uninitialised value(s)
+==4495==    at 0x1006715E5: xpc_uint64_create (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x100671573: _xpc_collect_images (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1006709C9: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495==    by 0x10001078E: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==4495==  Uninitialised value was created by a stack allocation
+==4495==    at 0x1003E02B0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:xpc_uint64_create
+   fun:_xpc_collect_images
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+}
+==4495== 
+==4495== HEAP SUMMARY:
+==4495==     in use at exit: 22,918 bytes in 164 blocks
+==4495==   total heap usage: 308,457 allocs, 308,293 frees, 23,691,944 bytes allocated
+==4495== 
+==4495== 14 bytes in 1 blocks are still reachable in loss record 1 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x10041E0FD: __setenv_locked (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x10041E506: setenv (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x100670A60: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:__setenv_locked
+   fun:setenv
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+}
+==4495== 16 bytes in 1 blocks are still reachable in loss record 2 of 43
+==4495==    at 0x1000F5031: malloc_zone_calloc (vg_replace_malloc.c:757)
+==4495==    by 0x1006C852C: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8391: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C74DD: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_calloc
+   fun:_NXHashRehashToCapacity
+   fun:NXHashInsert
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== 16 bytes in 1 blocks are still reachable in loss record 3 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x10041DDE8: _owned_ptr_alloc (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x10041E4D8: setenv (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x100670A60: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_owned_ptr_alloc
+   fun:setenv
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+}
+==4495== 24 bytes in 1 blocks are still reachable in loss record 4 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C8244: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006E3F1C: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::remove(std::__1::__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, void*>*>) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6B20: objc_opt::objc_stringhash_t::hash(char const*, unsigned long) const (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6362: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXHashGet
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE6removeENS_21__hash_const_iteratorIPNS_11__hash_nodeIS5_PvEEEE
+   fun:_ZNK8objc_opt17objc_stringhash_t4hashEPKcm
+   fun:_hasObjcContents
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+}
+==4495== 24 bytes in 1 blocks are still reachable in loss record 5 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C8244: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C74BA: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXHashGet
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== 24 bytes in 1 blocks are still reachable in loss record 6 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C8244: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8D32: copySwiftV1MangledName(char const*, bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7970: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXHashGet
+   fun:_ZL22copySwiftV1MangledNamePKcb
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+}
+==4495== 24 bytes in 1 blocks are still reachable in loss record 7 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C8244: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006CA730: attachCategories(objc_class*, locstamped_category_list_t*, bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C9A39: objc_class::setHasCustomRR(bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95E2: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXHashGet
+   fun:_ZL16attachCategoriesP10objc_classP26locstamped_category_list_tb
+   fun:_ZN10objc_class14setHasCustomRREb
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+}
+==4495== 24 bytes in 1 blocks are possibly lost in loss record 8 of 43
+==4495==    at 0x1000F5031: malloc_zone_calloc (vg_replace_malloc.c:757)
+==4495==    by 0x1006C8711: readClass(objc_class*, bool, bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C84D0: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8391: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C74DD: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_calloc
+   fun:_Z9readClassP10objc_classbb
+   fun:_NXHashRehashToCapacity
+   fun:NXHashInsert
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+}
+==4495== 32 bytes in 1 blocks are still reachable in loss record 9 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C83C1: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8391: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C826C: isEqualPrototype(void const*, void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006E3F1C: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::remove(std::__1::__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, void*>*>) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6B20: objc_opt::objc_stringhash_t::hash(char const*, unsigned long) const (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6362: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXHashInsert
+   fun:NXHashInsert
+   fun:_ZL16isEqualPrototypePKvS0_S0_
+   fun:NXHashGet
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE6removeENS_21__hash_const_iteratorIPNS_11__hash_nodeIS5_PvEEEE
+   fun:_ZNK8objc_opt17objc_stringhash_t4hashEPKcm
+   fun:_hasObjcContents
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==4495== 32 bytes in 1 blocks are still reachable in loss record 10 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C83E2: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8391: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C826C: isEqualPrototype(void const*, void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006E3F1C: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::remove(std::__1::__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, void*>*>) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6B20: objc_opt::objc_stringhash_t::hash(char const*, unsigned long) const (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6362: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXHashInsert
+   fun:NXHashInsert
+   fun:_ZL16isEqualPrototypePKvS0_S0_
+   fun:NXHashGet
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE6removeENS_21__hash_const_iteratorIPNS_11__hash_nodeIS5_PvEEEE
+   fun:_ZNK8objc_opt17objc_stringhash_t4hashEPKcm
+   fun:_hasObjcContents
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==4495== 32 bytes in 1 blocks are still reachable in loss record 11 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x1006C84A6: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8391: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C826C: isEqualPrototype(void const*, void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006E3F1C: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::remove(std::__1::__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, void*>*>) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6B20: objc_opt::objc_stringhash_t::hash(char const*, unsigned long) const (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6362: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_NXHashRehashToCapacity
+   fun:NXHashInsert
+   fun:_ZL16isEqualPrototypePKvS0_S0_
+   fun:NXHashGet
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE6removeENS_21__hash_const_iteratorIPNS_11__hash_nodeIS5_PvEEEE
+   fun:_ZNK8objc_opt17objc_stringhash_t4hashEPKcm
+   fun:_hasObjcContents
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==4495== 32 bytes in 1 blocks are still reachable in loss record 12 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x1006C82D2: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006E3F1C: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::remove(std::__1::__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, void*>*>) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6B20: objc_opt::objc_stringhash_t::hash(char const*, unsigned long) const (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6362: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:NXHashInsert
+   fun:NXHashGet
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE6removeENS_21__hash_const_iteratorIPNS_11__hash_nodeIS5_PvEEEE
+   fun:_ZNK8objc_opt17objc_stringhash_t4hashEPKcm
+   fun:_hasObjcContents
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+}
+==4495== 32 bytes in 1 blocks are still reachable in loss record 13 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C83C1: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8391: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C74DD: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXHashInsert
+   fun:NXHashInsert
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== 32 bytes in 1 blocks are still reachable in loss record 14 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x1006C84A6: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8391: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C74DD: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_NXHashRehashToCapacity
+   fun:NXHashInsert
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== 32 bytes in 1 blocks are still reachable in loss record 15 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x1006C82D2: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006CA730: attachCategories(objc_class*, locstamped_category_list_t*, bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C9A39: objc_class::setHasCustomRR(bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95E2: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:NXHashInsert
+   fun:NXHashGet
+   fun:_ZL16attachCategoriesP10objc_classP26locstamped_category_list_tb
+   fun:_ZN10objc_class14setHasCustomRREb
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+}
+==4495== 40 bytes in 1 blocks are still reachable in loss record 16 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006CB83D: objc_msgSendSuper2 (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B0685: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x100670BC9: xpc_array_create (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x10067067B: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgSendSuper2
+   fun:_os_object_alloc_realized
+   fun:xpc_array_create
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+}
+==4495== 48 bytes in 1 blocks are still reachable in loss record 17 of 43
+==4495==    at 0x1000F5031: malloc_zone_calloc (vg_replace_malloc.c:757)
+==4495==    by 0x1006C885A: readClass(objc_class*, bool, bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C87D7: readClass(objc_class*, bool, bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C84D0: _NXHashRehashToCapacity (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8391: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C826C: isEqualPrototype(void const*, void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006E3F1C: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::remove(std::__1::__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, void*>*>) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6B20: objc_opt::objc_stringhash_t::hash(char const*, unsigned long) const (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6362: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_calloc
+   fun:_Z9readClassP10objc_classbb
+   fun:_Z9readClassP10objc_classbb
+   fun:_NXHashRehashToCapacity
+   fun:NXHashInsert
+   fun:_ZL16isEqualPrototypePKvS0_S0_
+   fun:NXHashGet
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE6removeENS_21__hash_const_iteratorIPNS_11__hash_nodeIS5_PvEEEE
+   fun:_ZNK8objc_opt17objc_stringhash_t4hashEPKcm
+   fun:_hasObjcContents
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==4495== 48 bytes in 1 blocks are still reachable in loss record 18 of 43
+==4495==    at 0x1000F5031: malloc_zone_calloc (vg_replace_malloc.c:757)
+==4495==    by 0x1006C885A: readClass(objc_class*, bool, bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C87D7: readClass(objc_class*, bool, bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C82F3: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006CA730: attachCategories(objc_class*, locstamped_category_list_t*, bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C9A39: objc_class::setHasCustomRR(bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95E2: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_calloc
+   fun:_Z9readClassP10objc_classbb
+   fun:_Z9readClassP10objc_classbb
+   fun:NXHashInsert
+   fun:NXHashGet
+   fun:_ZL16attachCategoriesP10objc_classP26locstamped_category_list_tb
+   fun:_ZN10objc_class14setHasCustomRREb
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+}
+==4495== 48 bytes in 2 blocks are still reachable in loss record 19 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006C616A: preopt_init (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1001079C4: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:preopt_init
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+}
+==4495== 48 bytes in 2 blocks are possibly lost in loss record 20 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006C616A: preopt_init (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1001079C4: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:preopt_init
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+}
+==4495== 56 bytes in 1 blocks are still reachable in loss record 21 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006CB83D: objc_msgSendSuper2 (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B0685: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x100684CAF: _xpc_pipe_create (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x100670E25: _xpc_create_bootstrap_pipe (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1006709BF: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgSendSuper2
+   fun:_os_object_alloc_realized
+   fun:_xpc_pipe_create
+   fun:_xpc_create_bootstrap_pipe
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==4495== 64 bytes in 1 blocks are still reachable in loss record 22 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006C9510: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+}
+==4495== 64 bytes in 1 blocks are still reachable in loss record 23 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006C9510: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+}
+==4495== 64 bytes in 1 blocks are still reachable in loss record 24 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006C9510: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95E2: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==4495== 64 bytes in 1 blocks are still reachable in loss record 25 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006C9510: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95E2: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+}
+==4495== 64 bytes in 1 blocks are still reachable in loss record 26 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x100670C59: _xpc_calloc (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x100670BE2: xpc_array_create (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x10067067B: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_xpc_calloc
+   fun:xpc_array_create
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+}
+==4495== 64 bytes in 1 blocks are still reachable in loss record 27 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x10041DDFA: _owned_ptr_alloc (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x10041E4D8: setenv (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x100670A60: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495==    by 0x10000B72D: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_owned_ptr_alloc
+   fun:setenv
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+}
+==4495== 120 bytes in 1 blocks are still reachable in loss record 28 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006CB83D: objc_msgSendSuper2 (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B0685: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002B5B15: _dispatch_lane_create_with_target (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x10063EA53: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==4495==    by 0x1001079CE: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C2E7: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgSendSuper2
+   fun:_os_object_alloc_realized
+   fun:_dispatch_lane_create_with_target
+   fun:_libtrace_init
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+}
+==4495== 192 bytes in 1 blocks are still reachable in loss record 29 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006CB83D: objc_msgSendSuper2 (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B0685: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x100671058: xpc_dictionary_create (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x100670F10: _xpc_collect_environment (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1006709C4: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgSendSuper2
+   fun:_os_object_alloc_realized
+   fun:xpc_dictionary_create
+   fun:_xpc_collect_environment
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==4495== 192 bytes in 1 blocks are still reachable in loss record 30 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006CB83D: objc_msgSendSuper2 (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B0685: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x100671058: xpc_dictionary_create (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x100671662: _xpc_dyld_image_callback (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x10000D8B8: dyld::registerLoadCallback(void (*)(mach_header const*, char const*, bool)) (in /usr/lib/dyld)
+==4495==    by 0x100671583: _xpc_collect_images (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1006709C9: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgSendSuper2
+   fun:_os_object_alloc_realized
+   fun:xpc_dictionary_create
+   fun:_xpc_dyld_image_callback
+   fun:_ZN4dyld20registerLoadCallbackEPFvPK11mach_headerPKcbE
+   fun:_xpc_collect_images
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==4495== 240 bytes in 6 blocks are still reachable in loss record 31 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006CB83D: objc_msgSendSuper2 (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B0685: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x10068BBEB: _xpc_string_create (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x10067110F: xpc_string_create (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1006710C6: xpc_dictionary_set_string (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x100670F43: _xpc_collect_environment (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1006709C4: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgSendSuper2
+   fun:_os_object_alloc_realized
+   fun:_xpc_string_create
+   fun:xpc_string_create
+   fun:xpc_dictionary_set_string
+   fun:_xpc_collect_environment
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==4495== 256 bytes in 4 blocks are still reachable in loss record 32 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006C9510: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== 256 bytes in 4 blocks are still reachable in loss record 33 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006C9510: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95E2: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+}
+==4495== 278 bytes in 6 blocks are still reachable in loss record 34 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x10041567D: strdup (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006710F4: xpc_string_create (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1006710C6: xpc_dictionary_set_string (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x100670F43: _xpc_collect_environment (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1006709C4: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:xpc_string_create
+   fun:xpc_dictionary_set_string
+   fun:_xpc_collect_environment
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==4495== 322 bytes in 6 blocks are still reachable in loss record 35 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x10067149A: _xpc_malloc (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x100671351: _xpc_dictionary_insert (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1006710D7: xpc_dictionary_set_string (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x100670F43: _xpc_collect_environment (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1006709C4: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==4495==    by 0x1001079C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495==    by 0x100021CC7: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x100021EC5: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==4495==    by 0x10001D0D9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001D06C: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495==    by 0x10001C253: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_xpc_malloc
+   fun:_xpc_dictionary_insert
+   fun:xpc_dictionary_set_string
+   fun:_xpc_collect_environment
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==4495== 528 bytes in 1 blocks are possibly lost in loss record 36 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C833A: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006CA730: attachCategories(objc_class*, locstamped_category_list_t*, bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C9A39: objc_class::setHasCustomRR(bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95E2: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_malloc
+   fun:NXHashInsert
+   fun:NXHashGet
+   fun:_ZL16attachCategoriesP10objc_classP26locstamped_category_list_tb
+   fun:_ZN10objc_class14setHasCustomRREb
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+}
+==4495== 736 bytes in 1 blocks are still reachable in loss record 37 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x1003E031C: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1003E0478: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1006C744D: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== 2,064 bytes in 1 blocks are possibly lost in loss record 38 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C833A: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C8216: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C74BA: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_malloc
+   fun:NXHashInsert
+   fun:NXHashGet
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== 2,064 bytes in 1 blocks are possibly lost in loss record 39 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C93FD: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C92B4: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7A53: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_malloc
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== 3,200 bytes in 50 blocks are still reachable in loss record 40 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006C9510: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1001079C4: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+   fun:libSystem_initializer
+}
+==4495== 3,200 bytes in 50 blocks are still reachable in loss record 41 of 43
+==4495==    at 0x1000F4D72: calloc (vg_replace_malloc.c:755)
+==4495==    by 0x1006C9510: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95E2: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C6472: appendHeader (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006DA278: _class_remap (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x10000E570: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==4495==    by 0x10000E699: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==4495==    by 0x10031A312: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==4495==    by 0x1006C5C33: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1002B05C7: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==4495==    by 0x1002BC3AA: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+   fun:appendHeader
+   fun:_class_remap
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:map_images_nolock
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==4495== 4,096 bytes in 1 blocks are still reachable in loss record 42 of 43
+==4495==    at 0x1000F42C5: malloc (vg_replace_malloc.c:302)
+==4495==    by 0x1003FA75B: __smakebuf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x10040E303: __swsetup (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x100427FB6: __v2printf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1003FF881: vfprintf_l (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x1003FD999: printf (in /usr/lib/system/libsystem_c.dylib)
+==4495==    by 0x100001036: printBorder() (in ./main)
+==4495==    by 0x1000008E8: testHW5() (in ./main)
+==4495==    by 0x100000733: main (in ./main)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:__smakebuf
+   fun:__swsetup
+   fun:__v2printf
+   fun:vfprintf_l
+   fun:printf
+   fun:_Z11printBorderv
+   fun:_Z7testHW5v
+   fun:main
+}
+==4495== 4,112 bytes in 1 blocks are possibly lost in loss record 43 of 43
+==4495==    at 0x1000F4684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==4495==    by 0x1006C93FD: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C92B4: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006E3F7E: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::remove(std::__1::__hash_const_iterator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, void*>*>) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006D5ADC: class_copyProtocolList (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006CA1CF: getMethodNoSuper_nolock(objc_class*, objc_selector*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C99B1: objc_class::setHasCustomRR(bool) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95E2: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C95CA: realizeClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==4495==    by 0x1006C7C65: _read_images (in /usr/lib/libobjc.A.dylib)
+==4495== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_malloc
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE6removeENS_21__hash_const_iteratorIPNS_11__hash_nodeIS5_PvEEEE
+   fun:class_copyProtocolList
+   fun:_ZL23getMethodNoSuper_nolockP10objc_classP13objc_selector
+   fun:_ZN10objc_class14setHasCustomRREb
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_ZL12realizeClassP10objc_class
+   fun:_read_images
+}
+==4495== LEAK SUMMARY:
+==4495==    definitely lost: 0 bytes in 0 blocks
+==4495==    indirectly lost: 0 bytes in 0 blocks
+==4495==      possibly lost: 8,840 bytes in 7 blocks
+==4495==    still reachable: 14,078 bytes in 157 blocks
+==4495==         suppressed: 0 bytes in 0 blocks
+==4495== 
+==4495== For counts of detected and suppressed errors, rerun with: -v
+==4495== ERROR SUMMARY: 431 errors from 35 contexts (suppressed: 0 from 0)
