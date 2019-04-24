@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/schrod/prog/term_2/С++/06_String/String.cpp
+String.h
+/Users/schrod/prog/term_2/С++/06_String/String.h
+
+/Users/schrod/prog/term_2/С++/06_String/String.h
+cstring
+-
+cstdio
+-
+cstdlib
+-
+
+/Users/schrod/prog/term_2/С++/06_String/main.cpp
+iostream
+-
+String.cpp
+/Users/schrod/prog/term_2/С++/06_String/String.cpp
+

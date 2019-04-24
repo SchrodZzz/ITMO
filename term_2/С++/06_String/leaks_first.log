@@ -1,0 +1,2086 @@
+==10330== Memcheck, a memory error detector
+==10330== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==10330== Using Valgrind-3.14.0 and LibVEX; rerun with -h for copyright info
+==10330== Command: ./main
+==10330== Parent PID: 10313
+==10330== 
+--10330-- run: /usr/bin/dsymutil "./main"
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x100009330: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004035: _dyld_start (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x10003CA64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x10000B456: dyld::checkEnvironmentVariables(char const**) (in /usr/lib/dyld)
+==10330==    by 0x100009339: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004035: _dyld_start (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x10003CA64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL25checkEnvironmentVariablesEPPKc
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x100005BBC: dyld::processDyldEnvironmentVariable(char const*, char const*, char const*) (in /usr/lib/dyld)
+==10330==    by 0x10000B566: dyld::checkEnvironmentVariables(char const**) (in /usr/lib/dyld)
+==10330==    by 0x100009339: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004035: _dyld_start (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x10003CA64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld30processDyldEnvironmentVariableEPKcS1_S1_
+   fun:_ZN4dyldL25checkEnvironmentVariablesEPPKc
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x100009341: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004035: _dyld_start (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x10003CA64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x10000D39D: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x10000CD17: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x100006AC9: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x10000661D: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==10330==    by 0x10000A3A0: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004035: _dyld_start (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x10003CA64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x10000D39D: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x10000CD17: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x100006AC9: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x100006658: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==10330==    by 0x10000A3A0: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004035: _dyld_start (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x10003CA64: amfi_check_dyld_policy_self (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+   fun:_dyld_start
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x1000443A7: bcmp (in /usr/lib/dyld)
+==10330==    by 0x100019A2F: ImageLoaderMachO::validateFirstPages(linkedit_data_command const*, int, unsigned char const*, unsigned long, long long, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001F755: ImageLoaderMachOCompressed::instantiateFromFile(char const*, int, unsigned char const*, unsigned long, unsigned long long, unsigned long long, stat const&, unsigned int, unsigned int, linkedit_data_command const*, encryption_info_command const*, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100018A8F: ImageLoaderMachO::instantiateFromFile(char const*, int, unsigned char const*, unsigned long, unsigned long long, unsigned long long, stat const&, ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100006F38: dyld::loadPhase6(int, stat const&, char const*, dyld::LoadContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10000DCC5: dyld::loadPhase5(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x10000D846: dyld::loadPhase4(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x10000D5A0: dyld::loadPhase3(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x10000CD17: dyld::loadPhase1(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x100006AC9: dyld::loadPhase0(char const*, char const*, dyld::LoadContext const&, unsigned int&, std::__1::vector<char const*, std::__1::allocator<char const*> >*) (in /usr/lib/dyld)
+==10330==    by 0x100006658: dyld::load(char const*, dyld::LoadContext const&, unsigned int&) (in /usr/lib/dyld)
+==10330==    by 0x10000E5D4: dyld::libraryLocator(char const*, bool, char const*, ImageLoader::RPathChain const*, bool, unsigned int&) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x100006C45: dyld::loadPhase6(int, stat const&, char const*, dyld::LoadContext const&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:bcmp
+   fun:_ZN16ImageLoaderMachO18validateFirstPagesEPK21linkedit_data_commandiPKhmxRKN11ImageLoader11LinkContextE
+   fun:_ZN26ImageLoaderMachOCompressed19instantiateFromFileEPKciPKhmyyRK4statjjPK21linkedit_data_commandPK23encryption_info_commandRKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO19instantiateFromFileEPKciPKhmyyRK4statRKN11ImageLoader11LinkContextE
+   fun:_ZN4dyldL10loadPhase6EiRK4statPKcRKNS_11LoadContextE
+   fun:_ZN4dyldL10loadPhase5EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase4EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase3EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase1EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyldL10loadPhase0EPKcS1_RKNS_11LoadContextERjPNSt3__16vectorIS1_NS6_9allocatorIS1_EEEE
+   fun:_ZN4dyld4loadEPKcRKNS_11LoadContextERj
+   fun:_ZN4dyldL14libraryLocatorEPKcbS1_PKN11ImageLoader10RPathChainEbRj
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x1001EC9A6: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC8BB: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EDAFC: df_bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001ED8D4: df (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC254: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC0AB: init (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1003B6CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003B6E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100696A24: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df_bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x1001EC9A6: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC8BB: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EDB8C: df_bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001ED8D4: df (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC254: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC0AB: init (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1003B6CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003B6E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100696A24: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df_bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x1001EC9A6: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC8BB: bcc_update (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001ED936: df (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC254: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC0AB: init (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1003B6CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003B6E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100696A24: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:bcc_update
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x1001EC9A6: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001ED9EB: df (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC254: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC0AB: init (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1003B6CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003B6E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100696A24: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:df
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x1001EDCCE: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC2CC: nistctr_init (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EC0AB: init (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1003B6CFE: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003B6E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100696A24: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:nistctr_init
+   fun:init
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x1001EC9A6: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EDEEE: generate (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1003B6E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100696A24: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x1001EC9A6: ccaes_vng_ctr_crypt (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EDC51: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EDF39: generate (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1003B6E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100696A24: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:ccaes_vng_ctr_crypt
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x1001EDC6E: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EDF39: generate (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1003B6E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100696A24: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x1001EDCCE: drbg_update (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1001EDF39: generate (in /usr/lib/system/libcorecrypto.dylib)
+==10330==    by 0x1003B6E87: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100696A24: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:drbg_update
+   fun:generate
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x10069DA27: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100642D40: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330==    by 0x10000A708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==10330== Use of uninitialised value of size 8
+==10330==    at 0x10069DA29: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100642D40: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330==    by 0x10000A708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==10330== Use of uninitialised value of size 8
+==10330==    at 0x10069DA3B: objc_memmove_collectable (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100642D40: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330==    by 0x10000A708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_memmove_collectable
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==10330== Use of uninitialised value of size 8
+==10330==    at 0x10069DA59: objc_initializeClassPair (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100642D40: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330==    by 0x10000A708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_initializeClassPair
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==10330== Use of uninitialised value of size 8
+==10330==    at 0x10069DA67: objc_initializeClassPair (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100642D40: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330==    by 0x10000A708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_initializeClassPair
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x10069DA27: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100642D59: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330==    by 0x10000A708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==10330== Use of uninitialised value of size 8
+==10330==    at 0x10069DA29: _objc_rootAlloc (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100642D59: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330==    by 0x10000A708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:_objc_rootAlloc
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==10330== Use of uninitialised value of size 8
+==10330==    at 0x10069DA3B: objc_memmove_collectable (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100642D59: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330==    by 0x10000A708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_memmove_collectable
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==10330== Use of uninitialised value of size 8
+==10330==    at 0x10069DA59: objc_initializeClassPair (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100642D59: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330==    by 0x10000A708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==    by 0x100004502: dyldbootstrap::start(macho_header const*, int, char const**, long, macho_header const*, unsigned long*) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Value8
+   fun:objc_initializeClassPair
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+   fun:_ZN13dyldbootstrap5startEPK12macho_headeriPPKclS2_Pm
+}
+==10330== Conditional jump or move depends on uninitialised value(s)
+==10330==    at 0x100643CB6: xpc_uint64_create (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100643C44: _xpc_collect_images (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006430BA: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330==    by 0x10000A708: dyld::_main(macho_header const*, unsigned long, int, char const**, char const**, char const**, unsigned long*) (in /usr/lib/dyld)
+==10330==  Uninitialised value was created by a stack allocation
+==10330==    at 0x1003B6C54: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Cond
+   fun:xpc_uint64_create
+   fun:_xpc_collect_images
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+   fun:_ZN4dyld5_mainEPK12macho_headermiPPKcS5_S5_Pm
+}
+==10330== 
+==10330== HEAP SUMMARY:
+==10330==     in use at exit: 22,926 bytes in 164 blocks
+==10330==   total heap usage: 194 allocs, 30 frees, 31,547 bytes allocated
+==10330== 
+==10330== 14 bytes in 1 blocks are still reachable in loss record 1 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x1003F4518: __setenv_locked (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003F491A: setenv (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100643151: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:__setenv_locked
+   fun:setenv
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+}
+==10330== 16 bytes in 1 blocks are still reachable in loss record 2 of 43
+==10330==    at 0x1000D9031: malloc_zone_calloc (vg_replace_malloc.c:757)
+==10330==    by 0x100697B5A: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006979BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100696AB4: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_calloc
+   fun:NXHashInsert
+   fun:_ZL13hashPrototypePKvS0_
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== 16 bytes in 1 blocks are still reachable in loss record 3 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x1003F420F: _owned_ptr_alloc (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003F48EC: setenv (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100643151: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_owned_ptr_alloc
+   fun:setenv
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+}
+==10330== 24 bytes in 1 blocks are still reachable in loss record 4 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x100697874: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006B3646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006960F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069593B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==10330== 24 bytes in 1 blocks are still reachable in loss record 5 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x100697874: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100696A91: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== 24 bytes in 1 blocks are still reachable in loss record 6 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x100697874: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006981A8: _mapStrHash(_NXMapTable*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100696F3C: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZL11_mapStrHashP11_NXMapTablePKv
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==10330== 24 bytes in 1 blocks are still reachable in loss record 7 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x100697874: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100699417: NXMapRemove (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006AD067: _unload_image (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:NXMapRemove
+   fun:_unload_image
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+}
+==10330== 32 bytes in 1 blocks are still reachable in loss record 8 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x1006979EF: isEqualPrototype(void const*, void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006979BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069789C: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006B3646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006960F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069593B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_ZL16isEqualPrototypePKvS0_S0_
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==10330== 32 bytes in 1 blocks are still reachable in loss record 9 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x100697A10: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006979BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069789C: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006B3646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006960F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069593B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:NXHashInsert
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==10330== 32 bytes in 1 blocks are still reachable in loss record 10 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x100697AD4: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006979BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069789C: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006B3646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006960F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069593B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:NXHashInsert
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==10330== 32 bytes in 1 blocks are still reachable in loss record 11 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x100697902: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006B3646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006960F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069593B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:NXHashGet
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==10330== 32 bytes in 1 blocks are still reachable in loss record 12 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x1006979EF: isEqualPrototype(void const*, void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006979BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100696AB4: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_malloc
+   fun:_ZL16isEqualPrototypePKvS0_S0_
+   fun:_ZL13hashPrototypePKvS0_
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== 32 bytes in 1 blocks are still reachable in loss record 13 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x100697AD4: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006979BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100696AB4: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:NXHashInsert
+   fun:_ZL13hashPrototypePKvS0_
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== 32 bytes in 1 blocks are still reachable in loss record 14 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x100697902: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100699417: NXMapRemove (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006AD067: _unload_image (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:NXHashGet
+   fun:NXCreateHashTableFromZone
+   fun:NXMapRemove
+   fun:_unload_image
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+}
+==10330== 32 bytes in 1 blocks are possibly lost in loss record 15 of 43
+==10330==    at 0x1000D9031: malloc_zone_calloc (vg_replace_malloc.c:757)
+==10330==    by 0x100697D86: freeBuckets(NXHashTable*, int) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697AFE: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006979BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100696AB4: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_calloc
+   fun:_ZL11freeBucketsP11NXHashTablei
+   fun:NXHashInsert
+   fun:_ZL13hashPrototypePKvS0_
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==10330== 40 bytes in 1 blocks are still reachable in loss record 16 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x10069A4EB: objc_msgLookup (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EEF3: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x1006432B9: xpc_array_create (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100642D6B: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgLookup
+   fun:_os_object_alloc_realized
+   fun:xpc_array_create
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+}
+==10330== 48 bytes in 1 blocks are still reachable in loss record 17 of 43
+==10330==    at 0x1000D9031: malloc_zone_calloc (vg_replace_malloc.c:757)
+==10330==    by 0x100697E94: remapClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697E1E: TimeLogger::log(char const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697AFE: NXHashInsert (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006979BF: hashPrototype(void const*, void const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069789C: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006B3646: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006960F8: objc_opt::objc_stringhash_t::getIndex(char const*) const (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069593B: objc_image_info* getDataSection<objc_image_info>(mach_header_64 const*, char const*, unsigned long*, unsigned long*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_calloc
+   fun:_ZL10remapClassP10objc_class
+   fun:_ZN10TimeLogger3logEPKc
+   fun:NXHashInsert
+   fun:_ZL13hashPrototypePKvS0_
+   fun:NXCreateHashTableFromZone
+   fun:NXCreateHashTableFromZone
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZNK8objc_opt17objc_stringhash_t8getIndexEPKc
+   fun:_Z14getDataSectionI15objc_image_infoEPT_PK14mach_header_64PKcPmS8_
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+}
+==10330== 48 bytes in 1 blocks are still reachable in loss record 18 of 43
+==10330==    at 0x1000D9031: malloc_zone_calloc (vg_replace_malloc.c:757)
+==10330==    by 0x100697E94: remapClass(objc_class*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697E1E: TimeLogger::log(char const*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697921: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100699417: NXMapRemove (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006AD067: _unload_image (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc_zone_calloc
+   fun:_ZL10remapClassP10objc_class
+   fun:_ZN10TimeLogger3logEPKc
+   fun:NXHashGet
+   fun:NXCreateHashTableFromZone
+   fun:NXMapRemove
+   fun:_unload_image
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+}
+==10330== 48 bytes in 2 blocks are still reachable in loss record 19 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x100695742: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x1000EB9C4: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:map_images_nolock
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+}
+==10330== 48 bytes in 2 blocks are possibly lost in loss record 20 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x100695742: map_images_nolock (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x1000EB9C4: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:calloc
+   fun:map_images_nolock
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+}
+==10330== 56 bytes in 1 blocks are still reachable in loss record 21 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x10069A4EB: objc_msgLookup (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EEF3: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x1006567A5: _xpc_pipe_create (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100643518: _xpc_create_bootstrap_pipe (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006430B0: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgLookup
+   fun:_os_object_alloc_realized
+   fun:_xpc_pipe_create
+   fun:_xpc_create_bootstrap_pipe
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==10330== 64 bytes in 1 blocks are still reachable in loss record 22 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x1006AC98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==10330== 64 bytes in 1 blocks are still reachable in loss record 23 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x1006AC98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+}
+==10330== 64 bytes in 1 blocks are still reachable in loss record 24 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x1006AC98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+}
+==10330== 64 bytes in 1 blocks are still reachable in loss record 25 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x1006AC98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+}
+==10330== 64 bytes in 1 blocks are still reachable in loss record 26 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x10064334C: _xpc_calloc (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006432D0: xpc_array_create (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100642D6B: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_xpc_calloc
+   fun:xpc_array_create
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+}
+==10330== 64 bytes in 1 blocks are still reachable in loss record 27 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x1003F4221: _owned_ptr_alloc (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003F48EC: setenv (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100643151: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330==    by 0x10000571E: dyld::initializeMainExecutable() (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_owned_ptr_alloc
+   fun:setenv
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+   fun:_ZN4dyld24initializeMainExecutableEv
+}
+==10330== 120 bytes in 1 blocks are still reachable in loss record 28 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x10069A4EB: objc_msgLookup (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EEF3: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x1002942F6: _dispatch_lane_create_with_target (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x100611DF7: _libtrace_init (in /usr/lib/system/libsystem_trace.dylib)
+==10330==    by 0x1000EB9CE: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015E04: ImageLoader::runInitializers(ImageLoader::LinkContext const&, ImageLoader::InitializerTimingList&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgLookup
+   fun:_os_object_alloc_realized
+   fun:_dispatch_lane_create_with_target
+   fun:_libtrace_init
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader15runInitializersERKNS_11LinkContextERNS_21InitializerTimingListE
+}
+==10330== 192 bytes in 1 blocks are still reachable in loss record 29 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x10069A4EB: objc_msgLookup (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EEF3: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10064374A: xpc_dictionary_create (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100643605: _xpc_collect_environment (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006430B5: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgLookup
+   fun:_os_object_alloc_realized
+   fun:xpc_dictionary_create
+   fun:_xpc_collect_environment
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==10330== 192 bytes in 1 blocks are still reachable in loss record 30 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x10069A4EB: objc_msgLookup (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EEF3: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10064374A: xpc_dictionary_create (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100643D33: _xpc_dyld_image_callback (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100007873: dyld::registerLoadCallback(void (*)(mach_header const*, char const*, bool)) (in /usr/lib/dyld)
+==10330==    by 0x100643C54: _xpc_collect_images (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006430BA: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgLookup
+   fun:_os_object_alloc_realized
+   fun:xpc_dictionary_create
+   fun:_xpc_dyld_image_callback
+   fun:_ZN4dyld20registerLoadCallbackEPFvPK11mach_headerPKcbE
+   fun:_xpc_collect_images
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==10330== 240 bytes in 6 blocks are still reachable in loss record 31 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x10069A4EB: objc_msgLookup (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EEF3: _os_object_alloc_realized (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10065D51F: _xpc_string_create (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100643800: xpc_string_create (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006437B7: xpc_dictionary_set_string (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100643631: _xpc_collect_environment (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006430B5: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:objc_msgLookup
+   fun:_os_object_alloc_realized
+   fun:_xpc_string_create
+   fun:xpc_string_create
+   fun:xpc_dictionary_set_string
+   fun:_xpc_collect_environment
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==10330== 256 bytes in 4 blocks are still reachable in loss record 32 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x1006AC98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== 256 bytes in 4 blocks are still reachable in loss record 33 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x1006AC98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+}
+==10330== 278 bytes in 6 blocks are still reachable in loss record 34 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x1003EBC03: strdup (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1006437E5: xpc_string_create (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006437B7: xpc_dictionary_set_string (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100643631: _xpc_collect_environment (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006430B5: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:strdup
+   fun:xpc_string_create
+   fun:xpc_dictionary_set_string
+   fun:_xpc_collect_environment
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==10330== 322 bytes in 6 blocks are still reachable in loss record 35 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x100643B6B: _xpc_malloc (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100643A26: _xpc_dictionary_insert (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006437C8: xpc_dictionary_set_string (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x100643631: _xpc_collect_environment (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1006430B5: _libxpc_initializer (in /usr/lib/system/libxpc.dylib)
+==10330==    by 0x1000EB9C9: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330==    by 0x10001B591: ImageLoaderMachO::doModInitFunctions(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x10001B797: ImageLoaderMachO::doInitialization(ImageLoader::LinkContext const&) (in /usr/lib/dyld)
+==10330==    by 0x100016BE9: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100016B7F: ImageLoader::recursiveInitialization(ImageLoader::LinkContext const&, unsigned int, char const*, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330==    by 0x100015D72: ImageLoader::processInitializers(ImageLoader::LinkContext const&, unsigned int, ImageLoader::InitializerTimingList&, ImageLoader::UninitedUpwards&) (in /usr/lib/dyld)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:_xpc_malloc
+   fun:_xpc_dictionary_insert
+   fun:xpc_dictionary_set_string
+   fun:_xpc_collect_environment
+   fun:_libxpc_initializer
+   fun:libSystem_initializer
+   fun:_ZN16ImageLoaderMachO18doModInitFunctionsERKN11ImageLoader11LinkContextE
+   fun:_ZN16ImageLoaderMachO16doInitializationERKN11ImageLoader11LinkContextE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader23recursiveInitializationERKNS_11LinkContextEjPKcRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+   fun:_ZN11ImageLoader19processInitializersERKNS_11LinkContextEjRNS_21InitializerTimingListERNS_15UninitedUpwardsE
+}
+==10330== 528 bytes in 1 blocks are possibly lost in loss record 36 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x100697968: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100699417: NXMapRemove (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006AD067: _unload_image (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_malloc
+   fun:NXHashGet
+   fun:NXCreateHashTableFromZone
+   fun:NXMapRemove
+   fun:_unload_image
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+}
+==10330== 736 bytes in 1 blocks are still reachable in loss record 37 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x1003B6CC0: arc4_init (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003B6E1C: arc4random_buf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100696A24: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:arc4_init
+   fun:arc4random_buf
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== 2,064 bytes in 1 blocks are possibly lost in loss record 38 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x100697968: NXHashGet (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697846: NXCreateHashTableFromZone (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100696A91: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_malloc
+   fun:NXHashGet
+   fun:NXCreateHashTableFromZone
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== 2,064 bytes in 1 blocks are possibly lost in loss record 39 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x100698845: objc_class::setHasCustomRR(bool) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069870F: addSubclass(objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697021: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_malloc
+   fun:_ZN10objc_class14setHasCustomRREb
+   fun:_ZL11addSubclassP10objc_classS0_
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== 3,200 bytes in 50 blocks are still reachable in loss record 40 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x1006AC98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x1000EB9C4: libSystem_initializer (in /usr/lib/libSystem.B.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+   fun:libSystem_initializer
+}
+==10330== 3,200 bytes in 50 blocks are still reachable in loss record 41 of 43
+==10330==    at 0x1000D8D72: calloc (vg_replace_malloc.c:755)
+==10330==    by 0x1006AC98C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100695A4F: _hasObjcContents (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A855F: __objc_personality_v0 (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10000847A: dyld::notifyBatchPartial(dyld_image_states, bool, char const* (*)(dyld_image_states, unsigned int, dyld_image_info const*), bool, bool) (in /usr/lib/dyld)
+==10330==    by 0x10000862D: dyld::registerObjCNotifiers(void (*)(unsigned int, char const* const*, mach_header const* const*), void (*)(char const*, mach_header const*), void (*)(char const*, mach_header const*)) (in /usr/lib/dyld)
+==10330==    by 0x1002F7A26: _dyld_objc_notify_register (in /usr/lib/system/libdyld.dylib)
+==10330==    by 0x100695233: environ_init (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10028EE35: _os_object_init (in /usr/lib/system/libdispatch.dylib)
+==10330==    by 0x10029AAD1: libdispatch_init (in /usr/lib/system/libdispatch.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:calloc
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+   fun:_hasObjcContents
+   fun:__objc_personality_v0
+   fun:_ZN4dyldL18notifyBatchPartialE17dyld_image_statesbPFPKcS0_jPK15dyld_image_infoEbb
+   fun:_ZN4dyld21registerObjCNotifiersEPFvjPKPKcPKPK11mach_headerEPFvS1_S6_ESC_
+   fun:_dyld_objc_notify_register
+   fun:environ_init
+   fun:_os_object_init
+   fun:libdispatch_init
+}
+==10330== 4,096 bytes in 1 blocks are still reachable in loss record 42 of 43
+==10330==    at 0x1000D82C5: malloc (vg_replace_malloc.c:302)
+==10330==    by 0x1003D0DE8: __smakebuf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003E489C: __swsetup (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003FE03E: __v2printf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003D5E21: vfprintf_l (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x1003D3F71: printf (in /usr/lib/system/libsystem_c.dylib)
+==10330==    by 0x100000C37: String::check() (in ./main)
+==10330==    by 0x100000CEC: main (in ./main)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   fun:malloc
+   fun:__smakebuf
+   fun:__swsetup
+   fun:__v2printf
+   fun:vfprintf_l
+   fun:printf
+   fun:_ZN6String5checkEv
+   fun:main
+}
+==10330== 4,112 bytes in 1 blocks are possibly lost in loss record 43 of 43
+==10330==    at 0x1000D8684: malloc_zone_malloc (vg_replace_malloc.c:304)
+==10330==    by 0x100698845: objc_class::setHasCustomRR(bool) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x10069870F: addSubclass(objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006B36A8: std::__1::__hash_table<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, std::__1::__unordered_map_hasher<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerHash, true>, std::__1::__unordered_map_equal<unsigned long, std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*>, objc_references_support::DisguisedPointerEqual, true>, objc_references_support::ObjcAllocator<std::__1::__hash_value_type<unsigned long, objc_references_support::ObjectAssociationMap*> > >::__rehash(unsigned long) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006A3E29: updateCustomRR_AWZ(objc_class*, method_t*) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100698EC4: addMethod(objc_class*, objc_selector*, void (*)(), char const*, bool) (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACFDE: realizeAllClasses() (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA8C: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x1006ACA6B: _objc_flush_caches (in /usr/lib/libobjc.A.dylib)
+==10330==    by 0x100697266: _read_images (in /usr/lib/libobjc.A.dylib)
+==10330== 
+{
+   <insert_a_suppression_name_here>
+   Memcheck:Leak
+   match-leak-kinds: possible
+   fun:malloc_zone_malloc
+   fun:_ZN10objc_class14setHasCustomRREb
+   fun:_ZL11addSubclassP10objc_classS0_
+   fun:_ZNSt3__112__hash_tableINS_17__hash_value_typeImPN23objc_references_support20ObjectAssociationMapEEENS_22__unordered_map_hasherImS5_NS2_20DisguisedPointerHashELb1EEENS_21__unordered_map_equalImS5_NS2_21DisguisedPointerEqualELb1EEENS2_13ObjcAllocatorIS5_EEE8__rehashEm
+   fun:_ZL18updateCustomRR_AWZP10objc_classP8method_t
+   fun:_ZL9addMethodP10objc_classP13objc_selectorPFvvEPKcb
+   fun:_ZL17realizeAllClassesv
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_objc_flush_caches
+   fun:_read_images
+}
+==10330== LEAK SUMMARY:
+==10330==    definitely lost: 0 bytes in 0 blocks
+==10330==    indirectly lost: 0 bytes in 0 blocks
+==10330==      possibly lost: 8,848 bytes in 7 blocks
+==10330==    still reachable: 14,078 bytes in 157 blocks
+==10330==         suppressed: 0 bytes in 0 blocks
+==10330== 
+==10330== For counts of detected and suppressed errors, rerun with: -v
+==10330== ERROR SUMMARY: 428 errors from 32 contexts (suppressed: 0 from 0)
