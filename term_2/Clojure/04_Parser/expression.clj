@@ -31,7 +31,6 @@
    })
 
 
-
 (defn field [key]
   (fn [name] (get-prototype name key)))
 
@@ -94,8 +93,8 @@
    '*      Multiply
    '/      Divide
    'negate Negate
-   'square Square
-   'sqrt   Sqrt
+   'square  Square
+   'sqrt    Sqrt
    })
 
 (defn parseObjSeq [expr]
@@ -137,24 +136,32 @@
 (def +parser _parser)
 (def +ignore (partial +map (constantly 'ignore)))
 
-(def parserObjectSuffix
-  (let
-    [*all-chars (mapv char (range 0 128))
-     *digit (+char (apply str (filter #(Character/isDigit %) *all-chars)))
-     *number (+map read-string (+str (+seqf #(into (vec (cons %1 %2)) (vec (cons %3 %4))) ;TODO: refactor this one
-                                            (+opt (+char "-")) (+plus *digit) (+opt (+char ".")) (+opt (+plus *digit)))))
-     *spaces (apply str (filter #(or (Character/isWhitespace %) (= \, %)) *all-chars))
-     *space (+char *spaces)
-     *symbol (+map symbol (+str (+seqf cons (+char-not (str *spaces "\u0000()1234567890")) ;TODO: \u0000 to low levels
-                                       (+star (+char-not (str *spaces "\u0000()"))))))
-     *ws (+ignore (+star *space))]
-    (letfn [(*seq [p] (+seqn 1 (+char "(") (+opt (+seqf cons *ws p (+star (+seqn 0 *ws p)))) *ws (+char ")")))
-            (*list [] (+map #(cons (last %) (drop-last %)) (*seq (delay (*value)))))
-            (*value [] (+or *number *symbol (*list)))]
-      (+parser (+seqn 0 *ws (*value) *ws)))))
-(defn parseObjectSuffix [expr] (parseObjSeq (parserObjectSuffix expr))) ;TODO: fix this shit (get ans without parseObj)
+
+(def *all-chars (mapv char (range 32 128)))
+(def *space (+char (apply str (filter #(Character/isWhitespace %) *all-chars))))
+(def *letter (+char (apply str (filter #(Character/isLetter %) *all-chars))))
+(def *digit (+char (apply str (filter #(Character/isDigit %) *all-chars))))
+
+(def *ws (+ignore (+star *space)))
+
+(def *const (+map (comp Constant read-string) (+str (+seq (+opt (+char "-")) (+str (+plus *digit)) (+char ".") *digit))))
+
+(def *op-start (+or *letter (+char "+-*/")))
+(def *identifier (+str (+seqf cons *ws *op-start (+star (+or *op-start *digit)))))
+(def *symbol (+map (comp #(get OPERATORS % (Variable (str %))) symbol) *identifier))
+
+(def *value)
+(defn *seq [p] (+seqn 1 *ws (+char "(") (+opt (+seqf cons *ws p (+star (+seqn 0 *ws p)))) *ws (+char ")")))
+(def *list (+map (fn [list] (apply (last list) (butlast list))) (*seq (delay *value))))
+(def *value (+or *const *symbol *list))
+
+(def parseObjectSuffix (+parser (+seqn 0 *ws *value *ws)))
+
 
 #_tests_#
+
+;(def expr (parseObjectSuffix "(x 2.0 +) sadf sdfs fs"))
+;(println (evaluate expr {"x" 0}))
 
 ;(def exprrr (read-string "(10 5 +)"))
 ;(println (type (read-string "(10 5 +)")))
@@ -168,5 +175,29 @@
 ;(def exprr (parseObjectSuffix "(-5.0 y *)"))
 ;(println (evaluate exprr {"y" 0}))
 
-(def kek (Variable "YYZzXXx"))
-(println (evaluate kek {"z" 0.0, "x" 0.0, "y" 0.0}))
+;(def kek (parseObjectSuffix "(x 2.0 +)"))
+;(println (evaluate kek {"x" 0.0}))
+
+
+;(def *suffix-expr)
+;
+;(defn parseObjectSuffix [expr]
+;  (let
+;    [*space (+char " \t\n\r")
+;     *digit (+char "0123456789")
+;     *ws (+ignore (+star *space))
+;     *all-chars (mapv char (range 32 128))
+;     *letter (+char (apply str (filter #(Character/isLetter %) *all-chars)))
+;     *number (+map read-string (+str (+map flatten (+seq (+seqf cons (+opt (+char "+-")) (+plus *digit))
+;                                                         (+opt (+seqf cons (+char ".") (+plus *digit)))))))
+;     *identifier (+str (+seqf cons *letter (+star (+or *letter *digit))))
+;     *constant (+map Constant (+seqn 0 *ws *number))
+;     *variable (+map Variable (+seqn 0 *ws (+map str (+char "xyz"))))
+;     *negate (+seqf (constantly "negate") (+char "n") (+char "e") (+char "g") (+char "a") (+char "t") (+char "e'"))
+;     *op (+or (+map str (+char "+-*/")) *negate)]
+;    (letfn [(*suffix-sequence [p]
+;              (+seqn 1 *ws (+char "(")
+;                     (+seqf conj (+opt (+seqf cons *ws p (+star (+seqf conj *ws p)))) *ws *op) *ws (+char ")")))
+;            (*brackets [] (+map (fn [list] (apply (OPERATORS (first list)) (rest list))) (*suffix-sequence #'*suffix-expr)))]
+;      (let [*suffix-expr (+or *constant *variable (*brackets))])
+;      (-value (*suffix-expr expr)))))
