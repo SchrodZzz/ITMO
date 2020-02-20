@@ -4,25 +4,29 @@ import java.util.*;
 
 public class ArraySet<T> extends AbstractSet<T> implements SortedSet<T> {
 
-    private List<T> data;
-    private Comparator<? super T> comparator;
+    private final List<T> data;
+    private final Comparator<? super T> comparator;
 
     public ArraySet() {
         this(new ArrayList<>(), null);
     }
 
     public ArraySet(Collection<? extends T> collection) {
-        this(new ArrayList<>(collection), null);
+        this(collection, null);
     }
 
     public ArraySet(Collection<? extends T> collection, Comparator<? super T> comparator) {
         TreeSet<T> tmp = new TreeSet<>(comparator);
         tmp.addAll(collection);
 
-        this.data = new ArrayList<>(tmp);
+        this.data = Collections.unmodifiableList(new ArrayList<>(tmp));
         this.comparator = comparator;
     }
 
+    private ArraySet(List<T> data, Comparator<? super T> comparator) {
+        this.data = data;
+        this.comparator = comparator;
+    }
 
     private ArraySet(Comparator<? super T> comparator) {
         this(new ArrayList<>(), comparator);
@@ -46,6 +50,9 @@ public class ArraySet<T> extends AbstractSet<T> implements SortedSet<T> {
 
     @Override
     public SortedSet<T> subSet(T fromElement, T toElement) {
+        if (compare(fromElement, toElement) > 0) {
+            throw new IllegalArgumentException();
+        }
         int l = Collections.binarySearch(data, fromElement, comparator);
         int r = Collections.binarySearch(data, toElement, comparator);
         return subSet(l, r);
@@ -54,13 +61,13 @@ public class ArraySet<T> extends AbstractSet<T> implements SortedSet<T> {
     @Override
     public SortedSet<T> headSet(T toElement) {
         int r = Collections.binarySearch(data, toElement, comparator);
-        return data.isEmpty() ? new ArraySet<T>(comparator) : subSet(0, r);
+        return data.isEmpty() ? new ArraySet<>(comparator) : subSet(0, r);
     }
 
     @Override
     public SortedSet<T> tailSet(T fromElement) {
         int l = Collections.binarySearch(data, fromElement, comparator);
-        return data.isEmpty() ? new ArraySet<T>(comparator) : subSet(l, data.size());
+        return data.isEmpty() ? new ArraySet<>(comparator) : subSet(l, data.size());
     }
 
     @Override
@@ -84,6 +91,11 @@ public class ArraySet<T> extends AbstractSet<T> implements SortedSet<T> {
     @SuppressWarnings("unchecked cast")
     public boolean contains(Object o) {
         return Collections.binarySearch(data, (T) o, comparator) >= 0;
+    }
+
+    @SuppressWarnings("unchecked cast")
+    private int compare(T a, T b) {
+        return comparator == null ? ((Comparable) a).compareTo(b) : comparator.compare(a, b);
     }
 
     private SortedSet<T> subSet(int l, int r) {
