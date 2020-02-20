@@ -13,19 +13,39 @@ public class RecursiveWalk {
             return;
         }
 
-        try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(args[0]), StandardCharsets.UTF_8));
-             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(args[1]), StandardCharsets.UTF_8))) {
-            String path;
-            FileVisitor visitor = new FileVisitor(writer);
-            while ((path = reader.readLine()) != null) {
-                try {
-                    Files.walkFileTree(Paths.get(path), visitor);
-                } catch (InvalidPathException e) {
-                    writer.write(String.format("%08x %s\n", 0, path));
+        Path inPath, outPath;
+
+        try {
+            inPath = Paths.get(args[0]);
+        } catch (InvalidPathException e) {
+            System.out.println("Incorrect path to inFile: " + e.getMessage());
+            return;
+        }
+        try {
+            outPath = Paths.get(args[1]);
+        } catch (InvalidPathException e) {
+            System.out.println("Incorrect path to outFile: " + e.getMessage());
+            return;
+        }
+
+        try (BufferedReader reader = Files.newBufferedReader(inPath, StandardCharsets.UTF_8)) {
+            try (BufferedWriter writer = Files.newBufferedWriter(outPath, StandardCharsets.UTF_8)) {
+                String path;
+                FileVisitor visitor = new FileVisitor(writer);
+                while ((path = reader.readLine()) != null) {
+                    try {
+                        Files.walkFileTree(Paths.get(path), visitor);
+                    } catch (InvalidPathException e) {
+                        writer.write(String.format("%08x %s%n", 0, path));
+                    }
                 }
+            } catch (IOException e) {
+                System.out.println("Error with outFile: " + e.getMessage());
             }
+        } catch (UnsupportedEncodingException e) {
+            System.err.println("Unsupported encoding");
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.out.println("Error with inFile: " + e.getMessage());
         }
 
     }
@@ -34,6 +54,7 @@ public class RecursiveWalk {
         private static final int fnvFirst = 0x811c9dc5;
         private static final int fnvPrime = 0x01000193;
         private static final int shift = 0xff;
+        private byte[] buff = new byte[8192];
         private BufferedWriter writer;
 
         FileVisitor(BufferedWriter writer) {
@@ -45,9 +66,11 @@ public class RecursiveWalk {
             int h = fnvFirst;
             try (InputStream reader = Files.newInputStream(file)) {
                 int c;
-                while ((c = reader.read()) >= 0) {
-                    h *= fnvPrime;
-                    h ^= c & shift;
+                while ((c = reader.read(buff)) >= 0) {
+                    for (int i = 0; i < c; i++) {
+                        h *= fnvPrime;
+                        h ^= buff[i] & shift;
+                    }
                 }
             } catch (IOException e) {
                 h = 0;
