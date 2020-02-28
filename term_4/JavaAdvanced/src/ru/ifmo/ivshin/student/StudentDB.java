@@ -5,6 +5,7 @@ import info.kgeorgiy.java.advanced.student.Student;
 import info.kgeorgiy.java.advanced.student.StudentGroupQuery;
 
 import java.util.*;
+import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.UnaryOperator;
@@ -98,9 +99,11 @@ public class StudentDB implements StudentGroupQuery {
 
     @Override
     public Map<String, String> findStudentNamesByGroup(Collection<Student> students, String group) {
-        return students.stream()
-                .filter(s -> s.getGroup().equals(group))
-                .collect(Collectors.toMap(Student::getLastName, Student::getFirstName, (l, f) -> l.compareTo(f) < 0 ? l : f));
+        return findStudentsByGroup(students, group)
+                .stream()
+                .collect(Collectors.toMap(Student::getLastName,
+                        Student::getFirstName,
+                        BinaryOperator.minBy(String::compareTo)));
     }
 
     private Comparator<Student> comparator = Comparator.comparing(Student::getLastName)
