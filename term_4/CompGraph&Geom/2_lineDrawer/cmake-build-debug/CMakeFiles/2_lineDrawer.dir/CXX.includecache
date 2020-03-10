@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/schrod/prog/ITMO/term_4/CompGraph&Geom/2_lineDrawer/PNM.cpp
+PNM.hpp
+/Users/schrod/prog/ITMO/term_4/CompGraph&Geom/2_lineDrawer/PNM.hpp
+
+/Users/schrod/prog/ITMO/term_4/CompGraph&Geom/2_lineDrawer/PNM.hpp
+cmath
+-
+cstdio
+-
+stdexcept
+-
+string
+-
+
