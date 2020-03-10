@@ -34,22 +34,6 @@ void PNM::inverse() {
 
 void PNM::reverseHorizontally() {
     uchar* p1 = bitmap;
-    uchar* p2 = bitmap + size() - w * (magic == P5 ? 1 : 3);
-    for (size_t i = 0; i < h / 2; ++i) {
-        for (size_t j = 0; j < w; ++j) {
-            if (magic == P5) {
-                std::swap(*(p1 + i * w + j), *(p2 - i * w + j));
-            } else {
-                for (size_t k = 0; k < 3; ++k) {
-                    std::swap(*(p1 + 3 * i * w + 3 * j + k), *(p2 - 3 * i * w + 3 * j + k));
-                }
-            }
-        }
-    }
-}
-
-void PNM::reverseVertically() {
-    uchar* p1 = bitmap;
     uchar* p2 = bitmap + w * (magic == P5 ? 1 : 3) - (magic == P5 ? 1 : 3);
     for (size_t i = 0; i < w / 2; ++i) {
         for (size_t j = 0; j < h; ++j) {
@@ -64,14 +48,30 @@ void PNM::reverseVertically() {
     }
 }
 
+void PNM::reverseVertically() {
+    uchar* p1 = bitmap;
+    uchar* p2 = bitmap + size() - w * (magic == P5 ? 1 : 3);
+    for (size_t i = 0; i < h / 2; ++i) {
+        for (size_t j = 0; j < w; ++j) {
+            if (magic == P5) {
+                std::swap(*(p1 + i * w + j), *(p2 - i * w + j));
+            } else {
+                for (size_t k = 0; k < 3; ++k) {
+                    std::swap(*(p1 + 3 * i * w + 3 * j + k), *(p2 - 3 * i * w + 3 * j + k));
+                }
+            }
+        }
+    }
+}
+
 void PNM::rotateLeft() {
     transpose();
-    reverseHorizontally();
+    reverseVertically();
 }
 
 void PNM::rotateRight() {
     transpose();
-    reverseVertically();
+    reverseHorizontally();
 }
 
 void PNM::transpose() {
@@ -95,7 +95,6 @@ void PNM::transpose() {
     bitmap = tmp;
 }
 
-//TODO: file extension validation
 void PNM::save(const std::string& outFileName) {
     FILE* wf = fopen(outFileName.c_str(), "wb");
     if (!wf) {
