@@ -1,130 +1,169 @@
 package ru.ifmo.ivshin.implementor;
 
-import info.kgeorgiy.java.advanced.implementor.Impler;
 import info.kgeorgiy.java.advanced.implementor.ImplerException;
+import info.kgeorgiy.java.advanced.implementor.JarImpler;
 
+import javax.tools.JavaCompiler;
+import javax.tools.ToolProvider;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.*;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.InvalidPathException;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Objects;
+import java.util.jar.Attributes;
+import java.util.jar.JarOutputStream;
+import java.util.jar.Manifest;
 import java.util.stream.Collectors;
+import java.util.zip.ZipEntry;
 
-public class Implementor implements Impler {
+/**
+ * Implementation class for {@link JarImpler} interface
+ * @version 1.0
+ * @author Fat Lion
+ */
+public class Implementor implements JarImpler {
 
+    /**
+     * @throws ImplerException if the given class cannot be generated for one of such reasons:
+     *                         <ul>
+     *                             <li>token is null</li>
+     *                             <li>root is null</li>
+     *                             <li>token isn't interface</li>
+     *                             <li>token is private</li>
+     *                             <li>writing exception</li>
+     *                         </ul>
+     */
     @Override
     public void implement(Class<?> token, Path root) throws ImplerException {
-        if (root == null || token == null) {
-            throw new ImplerException("Null arguments in implement() method");
+        if (token == null || root == null) {
+            throw new ImplerException("Not-null arguments expected");
         }
-        if (token.isPrimitive() || token.isArray() || Modifier.isFinal(token.getModifiers()) || token == Enum.class) {
+        if (!token.isInterface() || Modifier.isPrivate(token.getModifiers())) {
             throw new ImplerException("Incorrect class token");
         }
-
-        root = root
-                .resolve(token.getPackage().getName()
-                        .replace('.', File.separatorChar))
-                .resolve(String.format("%s.%s", getClassName(token), "java"));
-
-        if (root.getParent() != null) {
-            try {
-                Files.createDirectories(root.getParent());
-            } catch (IOException e) {
-                throw new ImplerException("Unable to create directories for outFile", e);
-            }
-        }
-
-        try (BufferedWriter writer = Files.newBufferedWriter(root)) {
-            try {
-                writer.write(getClassHead(token));
-                if (!token.isInterface()) {
-                    implementConstructors(token, writer);
+        try (BufferedWriter writer = Files.newBufferedWriter(createFilePath(token, root), StandardCharsets.UTF_8)) {
+            StringBuilder builder = new StringBuilder();
+            builder.append("public class ")
+                    .append(token.getSimpleName())
+                    .append("Impl")
+                    .append(" implements ")
+                    .append(token.getCanonicalName())
+                    .append(" {");
+            for (Method method : token.getMethods()) {
+                builder.append("\n\t")
+                        .append("public ")
+                        .append(method.getReturnType().getCanonicalName())
+                        .append(" ")
+                        .append(method.getName()).append("(");
+                builder.append(Arrays.stream(method.getParameters())
+                        .map(t -> t.getType().getCanonicalName() + " " + t.getName())
+                        .collect(Collectors.joining(", ")));
+                builder.append(")");
+                if (method.getExceptionTypes().length > 0) {
+                    builder.append(" throws ");
+                    builder.append(Arrays.stream(method.getExceptionTypes())
+                            .map(Class::getCanonicalName)
+                            .collect(Collectors.joining(", ")));
                 }
-                implementAbstractMethods(token, writer);
-                writer.write("}\n");
-            } catch (IOException e) {
-                throw new ImplerException("Unable to write to outFile", e);
+                builder.append(" {");
+                builder.append("\n\t\t")
+                        .append("return ")
+                        .append(getDefaultValue(method.getReturnType()))
+                        .append(";\n");
+                builder.append("\t").append("}\n");
             }
+            builder.append("}");
+            writer.write(token.getPackage() == null ? "" : "package " + token.getPackageName() + ";\n\n");
+            writer.write(builder.toString());
         } catch (IOException e) {
-            throw new ImplerException("Unable to create outFile", e);
+            throw new ImplerException("Writing exception", e);
         }
     }
 
-    private void implementAbstractMethods(Class<?> token, BufferedWriter writer) throws IOException {
-        HashSet<ComparableMethod> methods = new HashSet<>();
-        getAbstractMethods(token.getMethods(), methods);
-        while (token != null) {
-            getAbstractMethods(token.getDeclaredMethods(), methods);
-            token = token.getSuperclass();
+    /**
+     * Produces {@code jar} file implementing interface specified by provided {@code token}.
+     * <p>
+     * Generated class full name should be same as full name of the type token with {@code Impl} suffix
+     * added.
+     * <p>
+     * During implementation creates temporary folder to store temporary {@code .java} and {@code .class} files.
+     *
+     * @throws ImplerException if the given class cannot be generated for one of such reasons:
+     *                         <ul>
+     *                         <li> Some arguments are {@code null}</li>
+     *                         <li> Error occurs during implementation via {@link #implement(Class, Path)} </li>
+     *                         <li> {@link JavaCompiler} failed to compile implemented class </li>
+     *                         <li> The problems with I/O occurred during implementation. </li>
+     *                         </ul>
+     */
+    @Override
+    public void implementJar(Class<?> token, Path jarFile) throws ImplerException {
+        if (token == null || jarFile == null) {
+            throw new ImplerException("Not-null arguments expected");
         }
-        for (ComparableMethod method : methods) {
-            writer.write(getExecutable(null, method.getMethod()).toString());
+        Path tmp;
+        try {
+            tmp = Files.createTempDirectory(jarFile.toAbsolutePath().getParent(), "tmp");
+        } catch (IOException e) {
+            throw new ImplerException("Unable to create tmp directory", e);
         }
+        implement(token, tmp);
+        compile(tmp, getClassPath(token, tmp));
+        createJar(token, tmp, jarFile);
+        clear(tmp.toFile());
     }
 
-    private void getAbstractMethods(Method[] methods, Set<ComparableMethod> storage) {
-        Arrays.stream(methods)
-                .filter(method -> Modifier.isAbstract(method.getModifiers()))
-                .map(ComparableMethod::new)
-                .collect(Collectors.toCollection(() -> storage));
+    /**
+     * Create file path for generating class.
+     *
+     * @param token for implementing
+     * @param root  start path to class
+     * @return {@link Path path} to generating class
+     * @throws IOException fail while creating directories
+     */
+    private Path createFilePath(Class<?> token, Path root) throws IOException {
+        Path fileDir = getDirectory(token, root);
+        Files.createDirectories(fileDir);
+        return fileDir.resolve(token.getSimpleName() + "Impl.java");
     }
 
-    private void implementConstructors(Class<?> token, BufferedWriter writer) throws IOException, ImplerException {
-        Constructor<?>[] constructors = Arrays.stream(token.getDeclaredConstructors())
-                .filter(constructor -> !Modifier.isPrivate(constructor.getModifiers()))
-                .toArray(Constructor<?>[]::new);
-        if (constructors.length == 0) {
-            throw new ImplerException("No constructors in class");
-        }
-        for (Constructor<?> constructor : constructors) {
-            writer.write(getExecutable(token, constructor).toString());
-        }
+    /**
+     * Gets directory for generating class.
+     *
+     * @param token for implementing
+     * @param root  start path to class
+     * @return {@link Path path} to directory of generating class
+     */
+    private Path getDirectory(Class<?> token, Path root) {
+        return token.getPackage() == null
+                ? root
+                : root.resolve(token.getPackageName().replace(".", File.separator));
     }
 
-    private StringBuilder getExecutable(Class<?> token, Executable exec) {
-        StringBuilder builder = new StringBuilder(getTabs(1));
-        final int mods = exec.getModifiers() & ~Modifier.ABSTRACT & ~Modifier.NATIVE & ~Modifier.TRANSIENT;
-        builder.append(Modifier.toString(mods))
-                .append(mods > 0 ? " " : "")
-                .append(getReturnTypeAndName(token, exec))
-                .append(getParams(exec, true))
-                .append(getExceptions(exec)).append(" ")
-                .append("{\n")
-                .append(getTabs(2))
-                .append(getBody(exec))
-                .append(";\n")
-                .append(getTabs(1))
-                .append("}\n");
-        return builder;
+    /**
+     * Gets path to generating class.
+     *
+     * @param token for implementing
+     * @param root  start path to class
+     * @return {@link Path path} to generating class
+     */
+    private Path getClassPath(Class<?> token, Path root) {
+        return getDirectory(token, root).resolve(token.getSimpleName() + "Impl");
     }
 
-    private StringBuilder getExceptions(Executable exec) {
-        StringBuilder builder = new StringBuilder();
-        Class<?>[] exceptions = exec.getExceptionTypes();
-        if (exceptions.length > 0) {
-            builder.append(" throws ");
-        }
-        builder.append(Arrays.stream(exceptions)
-                .map(Class::getCanonicalName)
-                .collect(Collectors.joining(",  "))
-        );
-        return builder;
-    }
-
-    private StringBuilder getTabs(int cnt) {
-        StringBuilder builder = new StringBuilder();
-        builder.append("\t".repeat(cnt));
-        return builder;
-    }
-
-    private String getClassName(Class<?> token) {
-        return token.getSimpleName() + "Impl";
-    }
-
+    /**
+     * Gets default value of given class
+     *
+     * @param token class to get default value
+     * @return {@link String} representing value
+     */
     private String getDefaultValue(Class<?> token) {
         if (token.equals(boolean.class)) {
             return " false";
@@ -136,78 +175,92 @@ public class Implementor implements Impler {
         return " null";
     }
 
-    private StringBuilder getPackage(Class<?> token) {
-        StringBuilder builder = new StringBuilder();
-        if (!token.getPackageName().equals("")) {
-            builder.append("package ")
-                    .append(token.getPackageName())
-                    .append(";")
-                    .append("\n");
+    /**
+     * Compiles class.
+     *
+     * @param root      start path to class
+     * @param classPath to generated class
+     * @throws ImplerException <ul>
+     *                         <li>Compiler not found</li>
+     *                         <li>Compiling error</li>
+     *                         </ul>
+     */
+    private void compile(Path root, Path classPath) throws ImplerException {
+        final JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+        if (compiler == null) {
+            throw new ImplerException("Compiler not found");
         }
-        builder.append("\n");
-        return builder;
-    }
-
-    private String getClassHead(Class<?> token) {
-        return String.format("%s public class %s %s %s {%n",
-                getPackage(token), getClassName(token),
-                (token.isInterface() ? "implements " : "extends "), token.getSimpleName());
-    }
-
-    private String getParam(Parameter param, boolean typeNeeded) {
-        return String.format("%s%s", typeNeeded ? param.getType().getCanonicalName() + " " : "", param.getName());
-    }
-
-    private String getBody(Executable exec) {
-        if (exec instanceof Method) {
-            return "return" + getDefaultValue(((Method) exec).getReturnType());
-        } else {
-            return "super" + getParams(exec, false);
+        if (compiler.run(null, null, null,
+                classPath + ".java",
+                "-cp",
+                root + File.pathSeparator + System.getProperty("java.class.path")) != 0) {
+            throw new ImplerException("Unable to compile generated files");
         }
     }
 
-    private String getParams(Executable exec, boolean typedNeeded) {
-        return Arrays.stream(exec.getParameters())
-                .map(param -> getParam(param, typedNeeded))
-                .collect(Collectors.joining(",  ", "(", ")"));
-    }
-
-    private String getReturnTypeAndName(Class<?> token, Executable exec) {
-        if (exec instanceof Method) {
-            Method tmp = (Method) exec;
-            return tmp.getReturnType().getCanonicalName() + " " + tmp.getName();
-        } else {
-            return getClassName(token);
+    /**
+     * Creates jar file.
+     *
+     * @param token   for implementing
+     * @param root    tart path to class
+     * @param jarFile to creating jar file
+     * @throws ImplerException The problems with I/O occurred
+     */
+    private void createJar(Class<?> token, Path root, Path jarFile) throws ImplerException {
+        Manifest manifest = new Manifest();
+        manifest.getMainAttributes().put(Attributes.Name.MANIFEST_VERSION, "1.0");
+        try (JarOutputStream writer = new JarOutputStream(Files.newOutputStream(jarFile), manifest)) {
+            writer.putNextEntry(new ZipEntry(getClassPath(token, Paths.get("")) + ".class"));
+            Files.copy(Paths.get(getClassPath(token, root) + ".class"), writer);
+        } catch (IOException e) {
+            throw new ImplerException("Cannot create jar file", e);
         }
     }
 
-    private static class ComparableMethod {
-        final private Method method;
-
-        ComparableMethod(Method other) {
-            method = other;
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            if (obj == null || getClass() != obj.getClass()) {
-                return false;
+    /**
+     * Deletes directory represented by {@code path}
+     *
+     * @param path directory to be deleted
+     */
+    private void clear(File path) {
+        if (path.isDirectory()) {
+            for (File underFile : Objects.requireNonNull(path.listFiles())) {
+                clear(underFile);
             }
-            ComparableMethod other = (ComparableMethod) obj;
-            return Arrays.equals(method.getParameterTypes(), other.method.getParameterTypes())
-                    && method.getReturnType().equals(other.method.getReturnType())
-                    && method.getName().equals(other.method.getName());
         }
+        path.delete();
+    }
 
-        @Override
-        public int hashCode() {
-            return (Arrays.hashCode(method.getParameterTypes())
-                    + method.getReturnType().hashCode())
-                    + method.getName().hashCode();
+
+    /**
+     * This function is used to choose which way of implementation to execute.
+     * Runs {@link Implementor} in two possible ways:
+     * <ul>
+     * <li> 2 arguments: {@code className rootPat} - runs {@link #implement(Class, Path)} with given arguments</li>
+     * <li> 3 arguments: {@code -jar className jarPath} - runs {@link #implementJar(Class, Path)} with two second arguments</li>
+     * </ul>
+     * If arguments are incorrect or an error occurs during implementation returns message with information about error
+     *
+     * @param args arguments for running an application
+     */
+    public static void main(String[] args) {
+        if (args == null || args.length < 2 || args.length > 3) {
+            System.out.println("Two or three arguments expected");
+            return;
         }
-
-        Method getMethod() {
-            return method;
+        Implementor implementor = new Implementor();
+        try {
+            if ("-jar".equals(args[0])) {
+                implementor.implementJar(Class.forName(args[1]), Paths.get(args[2]));
+            } else {
+                implementor.implement(Class.forName(args[0]), Paths.get(args[1]));
+            }
+        } catch (ClassNotFoundException e) {
+            System.out.println("Wrong token " + e.getMessage());
+        } catch (InvalidPathException e) {
+            System.out.println("Wrong file path " + e.getMessage());
+        } catch (ImplerException e) {
+            System.out.println("An error occurred during implementation: " + e.getMessage());
         }
     }
 }
