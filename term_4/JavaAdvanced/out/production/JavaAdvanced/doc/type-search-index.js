@@ -1,1 +1,1 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.ifmo.ivshin.implementor","l":"Implementor"}]
+typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"ru.ifmo.ivshin.implementor","l":"Implementor"},{"p":"info.kgeorgiy.java.advanced.implementor","l":"Impler"},{"p":"info.kgeorgiy.java.advanced.implementor","l":"ImplerException"},{"p":"info.kgeorgiy.java.advanced.implementor","l":"JarImpler"}]

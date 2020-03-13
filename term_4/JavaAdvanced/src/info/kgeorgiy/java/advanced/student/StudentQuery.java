@@ -1,7 +1,5 @@
 package info.kgeorgiy.java.advanced.student;
 
-import info.kgeorgiy.java.advanced.student.Student;
-
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -57,7 +55,7 @@ public interface StudentQuery {
     /** Stable version of {@link #findStudentNamesByGroup(Collection, String)} */
     default List<Map.Entry<String, String>> findStudentNamesByGroupList(final List<Student> students, final String group) {
         return findStudentNamesByGroup(students, group).entrySet().stream()
-                .sorted(Comparator.comparing(Map.Entry::getKey))
+                .sorted(Map.Entry.comparingByKey())
                 .collect(Collectors.toUnmodifiableList());
     }
 }
