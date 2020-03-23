@@ -1,7 +1,5 @@
 #include "PNM.hpp"
 
-typedef unsigned char uchar;
-
 int main(int argc, char **argv) {
 
     std::string prefix;
