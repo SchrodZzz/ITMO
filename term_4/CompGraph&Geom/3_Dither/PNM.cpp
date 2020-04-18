@@ -9,7 +9,7 @@ PNM::PNM(const std::string& inFileName) {
     }
 
     char magicStr[2];
-    fscanf(rf, "%s\n%d %d\n%d\n", magicStr, &this->w, &this->h, &this->maxValue);
+    fscanf(rf, "%s%d%d%d", magicStr, &this->w, &this->h, &this->maxValue);
 
     if (magicStr[0] != 'P' || magicStr[1] != '5') {
         throw std::runtime_error("Incorrect magic: Expected \"P5\"");
@@ -31,6 +31,8 @@ void PNM::process(int gradient, int ditherType, int bit, double gamma) {
     if (gradient == 1) {
         drawGradient();
     }
+    bitChange(bit);
+    gammaCorrection(gamma);
 
     switch (ditherType) {
         case 1:
@@ -56,8 +58,6 @@ void PNM::process(int gradient, int ditherType, int bit, double gamma) {
             break;
         default:;
     }
-    bitChange(bit);
-    gammaCorrection(gamma);
 }
 
 void PNM::save(const std::string& outFileName) {
@@ -73,9 +73,21 @@ void PNM::save(const std::string& outFileName) {
 }
 
 void PNM::gammaCorrection(double gamma) {
-    double gammaCorrection = gamma / 1.0;
-    for (size_t i = 0; i < size(); i++) {
-        bitmap[i] = uchar(maxValue * pow(bitmap[i] / double(maxValue), gammaCorrection));
+    if (gamma == 0) {
+        for (size_t i = 0; i < size(); i++) {
+            double value = bitmap[i] / double(maxValue);
+            if (value < 0.0031308) {
+                bitmap[i] = value * 12.92 * maxValue;
+            }
+            else {
+                bitmap[i] = maxValue * ((211.0 * std::pow (value, 0.4166) - 11.0) / 200.0);
+            }
+        }
+    } else {
+        double gammaCorrection = gamma / 1.0;
+        for (size_t i = 0; i < size(); i++) {
+            bitmap[i] = uchar(maxValue * pow(bitmap[i] / double(maxValue), gammaCorrection));
+        }
     }
 }
 
@@ -228,13 +240,7 @@ void PNM::setValue(int i, int j, double val) {
     if ((0 <= i) && (i < h)) {
         if ((0 <= j) && (j < w)) {
             int cur = bitmap[i * w + j] + int(val);
-            if (cur > maxValue) {
-                bitmap[i * w + j] = maxValue;
-            } else if (cur < 0) {
-                bitmap[i * w + j] = 0;
-            } else {
                 bitmap[i * w + j] += val;
-            }
         }
     }
 }
