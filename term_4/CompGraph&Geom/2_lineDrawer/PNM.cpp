@@ -9,7 +9,10 @@ PNM::PNM(const std::string& inFileName) {
     }
 
     char magicStr[2];
-    fscanf(rf, "%s\n%d %d\n%d\n", magicStr, &this->w, &this->h, &this->maxValue);
+    fscanf(rf, "%s", magicStr);
+    fscanf(rf, "%d", &this->w);
+    fscanf(rf, "%d", &this->h);
+    fscanf(rf, "%d", &this->maxValue);
 
     if (magicStr[0] != 'P' || magicStr[1] != '5') {
         throw std::runtime_error("Incorrect magic: Expected \"P5\"");
@@ -73,22 +76,32 @@ void PNM::save(const std::string& outFileName) {
     fclose(wf);
 }
 
-void PNM::setPixelColor(int x0, int y0, int intensity, int brightness, double gamma) {
-    double bgColor = bitmap[x0 + y0 * this->w] / double(this->maxValue);
-    double lineColor = bgColor * intensity / double(this->maxValue);
-    double alpha = brightness / double(this->maxValue);
-    bitmap[x0 + y0 * this->w] = this->maxValue * pow(
-            (alpha * pow(lineColor, gamma)
-             + (1 - alpha) * pow(bgColor, gamma)
-            ), 1.0 / gamma);
+void PNM::setPixelColor(int x0, int y0, double intensity, int brightness, double gamma) {
+    if (gamma == -1.0) {
+        double a = bitmap[x0 + y0 * this->w] / double(maxValue);
+        a = a <= 0.04045 ? a / 12.92 : pow((a + 0.055) / 1.055, 2.4);
+        double b = (maxValue - brightness) / double(maxValue);
+        b = b <= 0.04045 ? b / 12.92 : pow(((b + 0.055) / 1.055), 2.4);
+        a = (1.0 - intensity) * a + intensity * b;
+        a = a <= 0.0031308 ? 12.92 * a : pow(a, 0.416) * 1.055 - 0.055;
+        bitmap[x0 + y0 * this->w] = round(a * double(maxValue));
+    } else {
+        double a = bitmap[x0 + y0 * this->w] / double(maxValue);
+        a = pow(a, gamma);
+        double b = (maxValue - brightness) / double(maxValue);
+        b = pow(b, gamma);
+        a = (1.0 - intensity) * a + intensity * b;
+        a = pow(a, 1 / gamma);
+        bitmap[x0 + y0 * this->w] = round(a * double(maxValue));
+    }
 }
 
-int PNM::getColorIntensity(double err, double ed, double wd) {
-    return makePositive(this->maxValue * (err / ed - wd + 1));
+double PNM::getColorIntensity(double err, double ed, double wd) {
+    return makePositive(err / ed - wd + 1);
 }
 
-int PNM::makePositive(double val) {
-    return (0 < val) ? int(val) : 0;
+double PNM::makePositive(double val) {
+    return 1 - ((0 < val) ? double(val) : 0);
 }
 
 size_t PNM::size() {

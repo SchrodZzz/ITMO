@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
     prefix = "../tests/";
 #endif
 
-    if (argc != 10) {
+    if (argc != 10 && argc != 9) {
         perror("Incorrect amount of args");
         return 1;
     }
@@ -32,7 +32,12 @@ int main(int argc, char **argv) {
     int y0 = std::stoi(argv[6]);
     int x1 = std::stoi(argv[7]);
     int y1 = std::stoi(argv[8]);
-    double gamma = std::stod(argv[9]);
+    double gamma;
+    if (argc == 9) {
+        gamma = -1.0;
+    } else {
+        gamma = std::stod(argv[9]);
+    }
 
     image.drawLine(x0, y0, x1, y1, lineBrightness, lineWidth, gamma);
 

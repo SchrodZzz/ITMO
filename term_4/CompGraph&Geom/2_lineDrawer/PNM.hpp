@@ -20,9 +20,9 @@ private:
     uchar* bitmap;
     int w, h, maxValue;
 
-    void setPixelColor(int x0, int y0, int intensity, int brightness, double gamma);
-    int getColorIntensity(double err, double ed, double wd);
-    static int makePositive(double val);
+    void setPixelColor(int x0, int y0, double intensity, int brightness, double gamma);
+    static double getColorIntensity(double err, double ed, double wd);
+    static double makePositive(double val);
 
     size_t size();
 };
