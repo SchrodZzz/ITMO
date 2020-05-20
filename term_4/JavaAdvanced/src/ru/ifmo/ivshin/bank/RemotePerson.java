@@ -1,4 +1,4 @@
-package ru.ifmo.ivshin.bank;
+package ru.ifmo.rain.ivshin.bank;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -15,17 +15,17 @@ public class RemotePerson extends UnicastRemoteObject implements Person {
     }
 
     @Override
-    public String getName() throws RemoteException {
+    public String getName() {
         return name;
     }
 
     @Override
-    public String getSurname() throws RemoteException {
+    public String getSurname() {
         return surname;
     }
 
     @Override
-    public String getPassportId() throws RemoteException {
+    public String getPassportId() {
         return passportId;
     }
 }

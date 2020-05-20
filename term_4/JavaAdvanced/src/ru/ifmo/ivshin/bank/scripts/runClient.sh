@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 cd ../out/
-java ru.ifmo.ivshin.bank.Client $@
+java ru.ifmo.rain.ivshin.bank.Client $@

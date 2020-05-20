@@ -1,4 +1,4 @@
-package ru.ifmo.ivshin.bank;
+package ru.ifmo.rain.ivshin.bank;
 
 import java.rmi.*;
 import java.net.*;
@@ -7,8 +7,7 @@ public class Server {
     private final static int PORT = 8080;
     public static void main(final String... args) {
         try {
-            final Bank bank = new RemoteBank(PORT);
-            Naming.rebind("//localhost/bank", bank);
+            Naming.rebind("//localhost/bank", new RemoteBank(PORT));
         } catch (final RemoteException e) {
             System.out.println("Cannot export object: " + e.getMessage());
             e.printStackTrace();

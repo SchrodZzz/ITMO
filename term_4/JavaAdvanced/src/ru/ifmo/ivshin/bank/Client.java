@@ -1,4 +1,4 @@
-package ru.ifmo.ivshin.bank;
+package ru.ifmo.rain.ivshin.bank;
 
 import java.net.MalformedURLException;
 import java.rmi.Naming;

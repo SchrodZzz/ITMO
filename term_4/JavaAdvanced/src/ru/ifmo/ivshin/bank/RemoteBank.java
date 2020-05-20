@@ -1,4 +1,4 @@
-package ru.ifmo.ivshin.bank;
+package ru.ifmo.rain.ivshin.bank;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
@@ -64,7 +64,7 @@ public class RemoteBank extends UnicastRemoteObject implements Bank {
         if (name == null || surname == null || passport == null || persons.get(passport) != null) {
             return false;
         }
-        System.out.println("Creating person " + name + " " + surname + " with pasport " + passport);
+        System.out.println("Creating person " + name + " " + surname + " with passport " + passport);
         persons.put(passport, new RemotePerson(name, surname, passport, port));
         accountByPassport.put(passport, new ConcurrentSkipListSet<>());
         return true;

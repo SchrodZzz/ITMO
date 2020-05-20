@@ -8,4 +8,4 @@ then
     echo "Start rmiregistry";
 fi
 sleep 1
-java ru.ifmo.ivshin.bank.Server
+java ru.ifmo.rain.ivshin.bank.Server
