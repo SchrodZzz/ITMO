@@ -1,4 +1,4 @@
-package ru.ifmo.rain.ivshin.bank;
+package ru.ifmo.ivshin.bank;
 
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;

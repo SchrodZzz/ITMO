@@ -1,4 +1,4 @@
-package ru.ifmo.rain.ivshin.bank;
+package ru.ifmo.ivshin.bank;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
