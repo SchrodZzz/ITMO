@@ -1,3 +1,4 @@
+#include <iostream>
 #include "PNM.hpp"
 
 PNM::PNM() = default;
@@ -9,12 +10,16 @@ PNM::PNM(const std::string& inFileName) {
     }
 
     char magicStr[2];
-    fscanf(rf, "%s%d%d%d", magicStr, &this->w, &this->h, &this->maxValue);
+    fscanf(rf, "%s", magicStr);
+    fscanf(rf, "%d", &this->w);
+    fscanf(rf, "%d", &this->h);
+    fscanf(rf, "%d\n", &this->maxValue);
 
     if (magicStr[0] != 'P' || magicStr[1] != '5') {
         throw std::runtime_error("Incorrect magic: Expected \"P5\"");
     }
 
+    error = new int[size()];
     bitmap = new uchar[size()];
     fread(bitmap, sizeof(uchar), size(), rf);
 
@@ -25,16 +30,40 @@ PNM::~PNM() {
     if (!this->bitmap) {
         delete[] bitmap;
     }
+    if (!this->error) {
+        delete[] error;
+    }
+}
+
+void PNM::preGamma() {
+    for (size_t i = 0; i < size(); ++i) {
+        double dPixel = bitmap[i] / 255.0;
+        if (gamma > 0) {
+            dPixel = std::pow(dPixel, gamma);
+        } else {
+            if (dPixel <= 0.04045) {
+                dPixel = 25.0 * dPixel / 323;
+            } else {
+                dPixel = pow((200 * dPixel + 11) / 211.0, 12.0 / 5.0);
+            }
+        }
+        bitmap[i] = limitPixel(255 * dPixel);
+    }
 }
 
 void PNM::process(int gradient, int ditherType, int bit, double gamma) {
+    this->bit = bit;
+    this->gamma = gamma;
+
+    preGamma();
     if (gradient == 1) {
         drawGradient();
     }
-    bitChange(bit);
-    gammaCorrection(gamma);
 
     switch (ditherType) {
+        case 0:
+            noDither();
+            break;
         case 1:
             ordered();
             break;
@@ -72,25 +101,6 @@ void PNM::save(const std::string& outFileName) {
     fclose(wf);
 }
 
-void PNM::gammaCorrection(double gamma) {
-    if (gamma == 0) {
-        for (size_t i = 0; i < size(); i++) {
-            double value = bitmap[i] / double(maxValue);
-            if (value < 0.0031308) {
-                bitmap[i] = value * 12.92 * maxValue;
-            }
-            else {
-                bitmap[i] = maxValue * ((211.0 * std::pow (value, 0.4166) - 11.0) / 200.0);
-            }
-        }
-    } else {
-        double gammaCorrection = gamma / 1.0;
-        for (size_t i = 0; i < size(); i++) {
-            bitmap[i] = uchar(maxValue * pow(bitmap[i] / double(maxValue), gammaCorrection));
-        }
-    }
-}
-
 void PNM::drawGradient() {
     double step = double(w) / maxValue;
     for (size_t i = 0; i < h; i++) {
@@ -100,59 +110,77 @@ void PNM::drawGradient() {
     }
 }
 
-void PNM::bitChange(int bit) {
-    for (size_t i = 0; i < size(); i++) {
-        unsigned int val1 = bitmap[i];
-        unsigned int shift1 = 8 - bit;
-        unsigned int shift2 = bit;
-        unsigned int val2 = ((val1 >> shift1) << shift1);
-        val1 = val2;
-        for (int j = 7; j - bit >= 0; j -= bit) {
-            val2 >>= shift2;
-            val1 += val2;
+uchar PNM::changeBit(uchar pixel) {
+    uchar tmp = pixel & (((1u << bit) - 1) << (8 - bit));
+    pixel = 0;
+    for (unsigned i = 0; i < 8 / bit + 1; ++i) {
+        pixel = pixel | ((uchar) (tmp >> bit * i));
+    }
+    return pixel;
+}
+
+void PNM::drawPixel(int i, int j, uchar color) {
+    double dColor = color / 255.0;
+//    if (gamma > 0) {
+//        dColor = std::pow(dColor, 1.0 / gamma);
+//    } else {
+//        if (dColor <= 0.0031308) {
+//            dColor = 323.0 * dColor / 25.0;
+//        } else {
+//            dColor = (211 * pow(dColor, 5.0 / 12.0) - 11) / 200.0;
+//        }
+//    }
+    bitmap[i * w + j] = (uchar) std::min(255.0, std::max(0.0, 255 * dColor));
+}
+
+void PNM::noDither() {
+    for (size_t i = 0; i < h; ++i) {
+        for (int j = 0; j < w; ++j) {
+            drawPixel(i, j, changeBit(bitmap[i * w + j]));
         }
-        bitmap[i] = val1;
     }
 }
 
 void PNM::ordered() {
-    double coef = 1.0 / 64.0;
     double map[8][8] = {
-            {0,  48, 12, 60, 3,  51, 15, 63},
-            {32, 16, 44, 28, 35, 19, 47, 31},
-            {8,  56, 4,  52, 11, 59, 7,  55},
-            {40, 24, 36, 20, 43, 27, 39, 23},
-            {2,  50, 14, 62, 1,  49, 13, 61},
-            {34, 18, 46, 30, 33, 17, 45, 29},
-            {10, 58, 6,  54, 9,  57, 5,  53},
-            {42, 26, 38, 22, 41, 25, 37, 21}
+            {-0.5,     0.25,     -0.3125,  0.4375,   -0.453125, 0.296875,  -0.265625, 0.484375},
+            {0.0,      -0.25,    0.1875,   -0.0625,  0.046875,  -0.203125, 0.234375,  -0.015625},
+            {-0.375,   0.375,    -0.4375,  0.3125,   -0.328125, 0.421875,  -0.390625, 0.359375},
+            {0.125,    -0.125,   0.0625,   -0.1875,  0.171875,  -0.078125, 0.109375,  -0.140625},
+            {-0.46875, 0.28125,  -0.28125, 0.46875,  -0.484375, 0.265625,  -0.296875, 0.453125},
+            {0.03125,  -0.21875, 0.21875,  -0.03125, 0.015625,  -0.234375, 0.203125,  -0.046875},
+            {-0.34375, 0.40625,  -0.40625, 0.34375,  -0.359375, 0.390625,  -0.421875, 0.328125},
+            {0.15625,  -0.09375, 0.09375,  -0.15625, 0.140625,  -0.109375, 0.078125,  -0.171875}
     };
     for (size_t i = 0; i < h; i++) {
         for (size_t j = 0; j < w; j++) {
-            bitmap[i * w + j] = (bitmap[i * w + j] / (2.0 * maxValue) < coef * map[i % 8][j % 8] - 0.5) ? 0 : maxValue;
+            drawPixel(i, j, changeBit(limitPixel(bitmap[i * w + j] + map[i % 8][j % 8] * 255)));
         }
     }
 }
 
 void PNM::random() {
-    for (size_t i = 0; i < size(); i++) {
-        uchar val = rand() % (maxValue + 1);
-        bitmap[i] = bitmap[i] < val ? 0 : maxValue;
+    for (size_t i = 0; i < h; i++) {
+        for (size_t j = 0; j < w; j++) {
+            double val = ((double) rand() / (RAND_MAX)) * 255 - 128;
+            drawPixel(i, j, changeBit(limitPixel(bitmap[i * w + j] + val)));
+        }
     }
 }
 
 void PNM::fs() {
     for (int i = 0; i < h; i++) {
         for (int j = 0; j < w; j++) {
-            uchar oldVal = bitmap[i * w + j];
-            uchar newVal = (oldVal < (maxValue / 2)) ? 0 : maxValue;
-            bitmap[i * w + j] = newVal;
+            uchar oldVal = limitPixel(bitmap[i * w + j] + error[i * w + j]);
+            uchar newVal = changeBit(oldVal);
             double err = oldVal - newVal;
 
             setValue(i, j + 1, err * (7 / 16.0));
             setValue(i + 1, j - 1, err * (3 / 16.0));
             setValue(i + 1, j, err * (5 / 16.0));
             setValue(i + 1, j + 1, err * (1 / 16.0));
+
+            drawPixel(i, j, newVal);
         }
     }
 }
@@ -160,23 +188,24 @@ void PNM::fs() {
 void PNM::jjn() {
     for (int i = 0; i < h; i++) {
         for (int j = 0; j < w; j++) {
-            uchar oldVal = bitmap[i * w + j];
-            uchar newVal = (oldVal < (maxValue / 2)) ? 0 : maxValue;
-            bitmap[i * w + j] = newVal;
+            uchar oldVal = limitPixel(bitmap[i * w + j] + error[i * w + j]);
+            uchar newVal = changeBit(oldVal);
             double err = oldVal - newVal;
 
             setValue(i, j + 1, err * (7 / 48.0));
             setValue(i, j + 2, err * (5 / 48.0));
-            setValue(i + 1, j - 2, err * (1 / 48.0));
+            setValue(i + 1, j - 2, err * (3 / 48.0));
             setValue(i + 1, j - 1, err * (5 / 48.0));
             setValue(i + 1, j, err * (7 / 48.0));
             setValue(i + 1, j + 1, err * (5 / 48.0));
-            setValue(i + 1, j + 2, err * (1 / 48.0));
+            setValue(i + 1, j + 2, err * (3 / 48.0));
             setValue(i + 2, j - 2, err * (1 / 48.0));
-            setValue(i + 2, j - 1, err * (1 / 48.0));
+            setValue(i + 2, j - 1, err * (3 / 48.0));
             setValue(i + 2, j, err * (5 / 48.0));
-            setValue(i + 2, j + 1, err * (1 / 48.0));
+            setValue(i + 2, j + 1, err * (3 / 48.0));
             setValue(i + 2, j + 2, err * (1 / 48.0));
+
+            drawPixel(i, j, newVal);
         }
     }
 }
@@ -184,9 +213,8 @@ void PNM::jjn() {
 void PNM::sierra() {
     for (int i = 0; i < h; i++) {
         for (int j = 0; j < w; j++) {
-            uchar oldVal = bitmap[i * w + j];
-            uchar newVal = (oldVal < (maxValue / 2)) ? 0 : maxValue;
-            bitmap[i * w + j] = newVal;
+            uchar oldVal = limitPixel(bitmap[i * w + j] + error[i * w + j]);
+            uchar newVal = changeBit(oldVal);
             double err = oldVal - newVal;
 
             setValue(i, j + 1, err * (5 / 32.0));
@@ -199,6 +227,8 @@ void PNM::sierra() {
             setValue(i + 2, j - 1, err * (1 / 16.0));
             setValue(i + 2, j, err * (3 / 32.0));
             setValue(i + 2, j + 1, err * (1 / 16.0));
+
+            drawPixel(i, j, newVal);
         }
     }
 }
@@ -206,9 +236,8 @@ void PNM::sierra() {
 void PNM::atkinson() {
     for (int i = 0; i < h; i++) {
         for (int j = 0; j < w; j++) {
-            uchar oldVal = bitmap[i * w + j];
-            uchar newVal = (oldVal < (maxValue / 2)) ? 0 : maxValue;
-            bitmap[i * w + j] = newVal;
+            uchar oldVal = limitPixel(bitmap[i * w + j] + error[i * w + j]);
+            uchar newVal = changeBit(oldVal);
             double err = oldVal - newVal;
 
             setValue(i, j + 1, err * (1 / 8.0));
@@ -217,21 +246,32 @@ void PNM::atkinson() {
             setValue(i + 1, j, err * (1 / 8.0));
             setValue(i + 1, j + 1, err * (1 / 8.0));
             setValue(i + 1, j, err * (1 / 8.0));
+
+            drawPixel(i, j, newVal);
         }
     }
 }
 
 void PNM::halftone() {
-    double coef = 1.0 / 16.0;
     double map[4][4] = {
-            {7,  13, 11, 4},
-            {12, 16, 14, 8},
-            {10, 15, 6,  2},
-            {5,  9,  3,  1}
+            {0.375,  0.75,   0.625,  0.1875},
+            {0.6875, 0.9375, 0.8125, 0.4375},
+            {0.5625, 0.875,  0.3125, 0.0625},
+            {0.25,   0.5,    0.125,  0.0}
     };
     for (size_t i = 0; i < h; i++) {
         for (size_t j = 0; j < w; j++) {
-            bitmap[i * w + j] = bitmap[i * w + j] / (2.0 * maxValue) < (coef * map[i % 4][j % 4] - 0.5) ? 0 : maxValue;
+            uchar val;
+            if (bitmap[i * w + j] <= (unsigned char) (255 * map[i % 4][j % 4]))
+                val = 0;
+            else {
+                unsigned char pattern = (unsigned) bitmap[i * w + j] >> (8 - bit);
+                if (changeBit(pattern << (8 - bit)) <= (unsigned char) (255 * map[i % 4][j % 4])) {
+                    pattern++;
+                }
+                val = changeBit(pattern << (8 - bit));
+            }
+            drawPixel(i, j, changeBit(limitPixel(val)));
         }
     }
 }
@@ -239,10 +279,13 @@ void PNM::halftone() {
 void PNM::setValue(int i, int j, double val) {
     if ((0 <= i) && (i < h)) {
         if ((0 <= j) && (j < w)) {
-            int cur = bitmap[i * w + j] + int(val);
-                bitmap[i * w + j] += val;
+            error[i * w + j] += val;
         }
     }
+}
+
+uchar PNM::limitPixel(double pixel) {
+    return (uchar) std::min(255.0, std::max(0.0, pixel));;
 }
 
 size_t PNM::size() {

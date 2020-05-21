@@ -19,12 +19,15 @@ struct PNM {
 
 private:
     uchar* bitmap;
+    int* error;
     int w, h, maxValue;
 
-    void gammaCorrection(double gamma);
-    void drawGradient();
-    void bitChange(int bit);
+    uint bit;
+    double gamma;
 
+    void drawGradient();
+
+    void noDither();
     void ordered();
     void random();
     void fs();
@@ -32,6 +35,12 @@ private:
     void sierra();
     void atkinson();
     void halftone();
+
+    void preGamma();
+
+    uchar changeBit(uchar pixel);
+    static uchar limitPixel(double pixel);
+    void drawPixel(int i, int j, uchar color = 255);
 
     void setValue(int i, int j, double val);
 

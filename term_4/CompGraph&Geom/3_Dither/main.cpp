@@ -7,7 +7,7 @@ int main(int argc, char** argv) {
     prefix = "../tests/";
 #endif
 
-    if (argc != 7) {
+    if (argc != 7 && argc != 6) {
         perror("Incorrect amount of args");
         return 1;
     }
@@ -29,7 +29,15 @@ int main(int argc, char** argv) {
     int gradient = std::stoi(argv[3]);
     int ditherType = std::stoi(argv[4]);
     int bit = std::stoi(argv[5]);
-    double gamma = std::stod(argv[6]);
+    double gamma = 0;
+    if (argc == 7) {
+        gamma = std::stod(argv[6]);
+    }
+
+    if (gradient > 1 || ditherType > 7 || bit == 0 || bit > 8 || gamma < 0) {
+        std::perror("Wrong arguments");
+        return 1;
+    }
 
     image.process(gradient, ditherType, bit, gamma);
 
