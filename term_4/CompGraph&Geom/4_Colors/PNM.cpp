@@ -31,7 +31,8 @@ uchar* PNM::readFile(const std::string& inFileName, const char& magicNum) {
     fscanf(rf, "%s", magicStr);
     fscanf(rf, "%d", &this->w);
     fscanf(rf, "%d", &this->h);
-    fscanf(rf, "%d\n", &this->maxValue);
+    fscanf(rf, "%d", &this->maxValue);
+    fgetc(rf);
 
     if (magicStr[0] != 'P' || magicStr[1] != magicNum) {
         throw std::runtime_error("Incorrect magic: Expected \"P6\"");
@@ -70,7 +71,7 @@ void PNM::convertInto(const ColorSpace& colorSpace) {
                 Min = std::min(R, std::min(G, B));
                 V = Max;
                 C = Max - Min;
-                L = (Max + Min) / 2.0;
+                L = V - C / 2.0;
                 if (C == 0) {
                     H = 0;
                 } else if (V == R) {
@@ -90,16 +91,16 @@ void PNM::convertInto(const ColorSpace& colorSpace) {
                 if (colorSpace == HSV) {
                     S = (V == 0) ? 0 : C / V;
                     bitmap[3 * i + 2] = (uchar) (V * 255.0);
+                    this->colorSpace = HSV;
                 }
                 if (colorSpace == HSL) {
                     S = ((L == 0) || (L == 1)) ? 0 : ((V - L) / std::min(L, 1 - L));
                     bitmap[3 * i + 2] = (uchar) (L * 255.0);
+                    this->colorSpace = HSL;
                 }
                 bitmap[3 * i + 1] = (uchar) (S * 255.0);
                 bitmap[3 * i] = (uchar) ((H / 360.0) * 255.0);
-
             }
-            this->colorSpace = colorSpace;
             break;
         case YCbCr_601:
         case YCbCr_709:
