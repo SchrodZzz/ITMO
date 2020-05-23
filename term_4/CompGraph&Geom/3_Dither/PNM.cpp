@@ -13,7 +13,8 @@ PNM::PNM(const std::string& inFileName) {
     fscanf(rf, "%s", magicStr);
     fscanf(rf, "%d", &this->w);
     fscanf(rf, "%d", &this->h);
-    fscanf(rf, "%d\n", &this->maxValue);
+    fscanf(rf, "%d", &this->maxValue);
+    fgetc(rf);
 
     if (magicStr[0] != 'P' || magicStr[1] != '5') {
         throw std::runtime_error("Incorrect magic: Expected \"P5\"");
@@ -55,10 +56,11 @@ void PNM::process(int gradient, int ditherType, int bit, double gamma) {
     this->bit = bit;
     this->gamma = gamma;
 
-    preGamma();
     if (gradient == 1) {
         drawGradient();
     }
+
+    preGamma();
 
     switch (ditherType) {
         case 0:
@@ -154,7 +156,7 @@ void PNM::ordered() {
     };
     for (size_t i = 0; i < h; i++) {
         for (size_t j = 0; j < w; j++) {
-            drawPixel(i, j, changeBit(limitPixel(bitmap[i * w + j] + map[i % 8][j % 8] * 255)));
+            drawPixel(i, j, changeBit(limitPixel(bitmap[i * w + j] + map[i % 8][j % 8] * 255 / bit)));
         }
     }
 }
@@ -162,7 +164,7 @@ void PNM::ordered() {
 void PNM::random() {
     for (size_t i = 0; i < h; i++) {
         for (size_t j = 0; j < w; j++) {
-            double val = ((double) rand() / (RAND_MAX)) * 255 - 128;
+            double val = (double) rand() / (RAND_MAX) * 255 / bit - (255 / (2.0 * bit));
             drawPixel(i, j, changeBit(limitPixel(bitmap[i * w + j] + val)));
         }
     }
@@ -261,17 +263,7 @@ void PNM::halftone() {
     };
     for (size_t i = 0; i < h; i++) {
         for (size_t j = 0; j < w; j++) {
-            uchar val;
-            if (bitmap[i * w + j] <= (unsigned char) (255 * map[i % 4][j % 4]))
-                val = 0;
-            else {
-                unsigned char pattern = (unsigned) bitmap[i * w + j] >> (8 - bit);
-                if (changeBit(pattern << (8 - bit)) <= (unsigned char) (255 * map[i % 4][j % 4])) {
-                    pattern++;
-                }
-                val = changeBit(pattern << (8 - bit));
-            }
-            drawPixel(i, j, changeBit(limitPixel(val)));
+            drawPixel(i, j, changeBit(limitPixel(bitmap[i * w + j] + map[i % 4][j % 4] * 255 / bit)));
         }
     }
 }
