@@ -9,7 +9,11 @@ PNM::PNM(const std::string& inFileName) {
     }
 
     char magicStr[2];
-    fscanf(rf, "%s\n%d %d\n%d\n", magicStr, &this->w, &this->h, &this->maxValue);
+    fscanf(rf, "%s", magicStr);
+    fscanf(rf, "%d", &this->w);
+    fscanf(rf, "%d", &this->h);
+    fscanf(rf, "%d", &this->maxValue);
+    fgetc(rf);
 
     setMagic(magicStr, inFileName.substr(inFileName.find_last_of('.') + 1));
 
