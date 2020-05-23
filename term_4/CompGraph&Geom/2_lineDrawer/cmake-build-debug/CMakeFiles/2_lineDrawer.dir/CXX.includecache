@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 /Users/schrod/prog/ITMO/term_4/CompGraph&Geom/2_lineDrawer/PNM.cpp
-iostream
--
 PNM.hpp
 /Users/schrod/prog/ITMO/term_4/CompGraph&Geom/2_lineDrawer/PNM.hpp
 

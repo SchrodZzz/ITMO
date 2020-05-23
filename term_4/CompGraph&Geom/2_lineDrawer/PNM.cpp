@@ -13,6 +13,7 @@ PNM::PNM(const std::string& inFileName) {
     fscanf(rf, "%d", &this->w);
     fscanf(rf, "%d", &this->h);
     fscanf(rf, "%d", &this->maxValue);
+    fgetc(rf);
 
     if (magicStr[0] != 'P' || magicStr[1] != '5') {
         throw std::runtime_error("Incorrect magic: Expected \"P5\"");
