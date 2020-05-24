@@ -81,7 +81,7 @@ void PNM::setPixelColor(int x0, int y0, double intensity, int brightness, double
     if (gamma == -1.0) {
         double a = bitmap[x0 + y0 * this->w] / double(maxValue);
         a = a <= 0.04045 ? a / 12.92 : pow((a + 0.055) / 1.055, 2.4);
-        double b = (maxValue - brightness) / double(maxValue);
+        double b = (brightness) / double(maxValue);
         b = b <= 0.04045 ? b / 12.92 : pow(((b + 0.055) / 1.055), 2.4);
         a = (1.0 - intensity) * a + intensity * b;
         a = a <= 0.0031308 ? 12.92 * a : pow(a, 0.416) * 1.055 - 0.055;
@@ -89,7 +89,7 @@ void PNM::setPixelColor(int x0, int y0, double intensity, int brightness, double
     } else {
         double a = bitmap[x0 + y0 * this->w] / double(maxValue);
         a = pow(a, gamma);
-        double b = (maxValue - brightness) / double(maxValue);
+        double b = (brightness) / double(maxValue);
         b = pow(b, gamma);
         a = (1.0 - intensity) * a + intensity * b;
         a = pow(a, 1 / gamma);
