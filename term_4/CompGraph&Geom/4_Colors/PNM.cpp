@@ -110,9 +110,9 @@ void PNM::convertInto(const ColorSpace& colorSpace) {
                 Kb = 0.114;
                 this->colorSpace = YCbCr_601;
             } else {
-                Kr = 0.0722;
-                Kg = 0.2126;
-                Kb = 0.7152;
+                Kb = 0.0722;
+                Kr = 0.2126;
+                Kg = 0.7152;
                 this->colorSpace = YCbCr_709;
             }
             for (int i = 0; i < w * h; ++i) {
@@ -201,11 +201,11 @@ void PNM::colorSpaceToRGB() {
                 H_D = H / 60;
                 if (colorSpace == HSL) {
                     C = (1 - std::abs(2 * L - 1)) * S;
-                    X = C * (1 - std::abs(fmod(H_D, 2) - 1));
+                    X = C * (1 - std::abs(std::fmod(H_D, 2) - 1));
                     m = L - C / 2.0;
                 } else {
                     C = S * L;
-                    X = C * (1.0 - std::abs(fmod(H_D, 2) - 1.0));
+                    X = C * (1.0 - std::abs(std::fmod(H_D, 2) - 1.0));
                     m = L - C;
                 }
 
@@ -250,9 +250,9 @@ void PNM::colorSpaceToRGB() {
                 Kg = 0.587;
                 Kb = 0.114;
             } else {
-                Kr = 0.0722;
-                Kg = 0.2126;
-                Kb = 0.7152;
+                Kb = 0.0722;
+                Kr = 0.2126;
+                Kg = 0.7152;
             }
             for (int i = 0; i < size(); ++i) {
                 Y = bitmap[3 * i] / 255.0;
