@@ -4,6 +4,7 @@
 #include <cstdio>
 #include <stdexcept>
 #include <string>
+#include <algorithm>
 
 typedef unsigned char uchar;
 
