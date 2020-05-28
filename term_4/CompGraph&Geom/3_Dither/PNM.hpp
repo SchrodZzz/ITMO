@@ -5,6 +5,7 @@
 #include <stdexcept>
 #include <string>
 #include <random>
+#include <algorithm>
 
 typedef unsigned char uchar;
 

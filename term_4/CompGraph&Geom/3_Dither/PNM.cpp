@@ -123,15 +123,15 @@ uchar PNM::changeBit(uchar pixel) {
 
 void PNM::drawPixel(int i, int j, uchar color) {
     double dColor = color / 255.0;
-//    if (gamma > 0) {
-//        dColor = std::pow(dColor, 1.0 / gamma);
-//    } else {
-//        if (dColor <= 0.0031308) {
-//            dColor = 323.0 * dColor / 25.0;
-//        } else {
-//            dColor = (211 * pow(dColor, 5.0 / 12.0) - 11) / 200.0;
-//        }
-//    }
+    if (gamma > 0) {
+        dColor = std::pow(dColor, 1.0 / gamma);
+    } else {
+        if (dColor <= 0.0031308) {
+            dColor = 323.0 * dColor / 25.0;
+        } else {
+            dColor = (211 * pow(dColor, 5.0 / 12.0) - 11) / 200.0;
+        }
+    }
     bitmap[i * w + j] = (uchar) std::min(255.0, std::max(0.0, 255 * dColor));
 }
 
