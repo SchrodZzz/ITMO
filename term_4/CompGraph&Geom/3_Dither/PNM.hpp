@@ -19,8 +19,10 @@ struct PNM {
     void save(const std::string& outFileName);
 
 private:
+    double* error;
     uchar* bitmap;
-    int* error;
+    bool isGradient = false;
+    double* gradient;
     int w, h, maxValue;
 
     uint bit;
@@ -37,10 +39,10 @@ private:
     void atkinson();
     void halftone();
 
-    void preGamma();
-
     uchar changeBit(uchar pixel);
     static uchar limitPixel(double pixel);
+    double gammaCorrection(double val);
+    double getPixel(int i, int j);
     void drawPixel(int i, int j, uchar color = 255);
 
     void setValue(int i, int j, double val);
