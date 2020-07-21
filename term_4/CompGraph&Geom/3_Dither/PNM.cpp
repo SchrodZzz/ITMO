@@ -147,7 +147,7 @@ void PNM::ordered() {
     };
     for (size_t i = 0; i < 8; i++) {
         for (size_t j = 0; j < 8; j++) {
-            map[i][j] = (map[i][j] + 0.5) / 64.0 * 255.0;
+            map[i][j] = (map[i][j] + 0.5) / 64.0;
         }
     }
     for (size_t i = 0; i < h; i++) {
@@ -160,7 +160,11 @@ void PNM::ordered() {
             if (next == current) {
                 current = changeBit(limitPixel((double) next - (1u << (8 - bit))));
             }
-            drawPixel(i, j, gammaCorrection(getPixel(i, j) / 255.0) * 255.0 >= map[i % 8][j % 8] ? next : current);
+            double nextGammaValue = gammaCorrection(next / 255.0) * 255.0 - gammaCorrection(current / 255.0) * 255.0;
+            double curGammaValue =
+                    gammaCorrection(getPixel(i, j) / 255.0) * 255.0 - gammaCorrection(current / 255.0) * 255.0 +
+                    (map[i%8][j%8] - 0.5) * nextGammaValue;
+            drawPixel(i, j, curGammaValue >= nextGammaValue / 2.0 ? next : current);
         }
     }
 }
@@ -327,7 +331,7 @@ void PNM::halftone() {
     };
     for (int i = 0; i < 4; i++) {
         for (size_t j = 0; j < 4; j++) {
-            map[i][j] = (map[i][j] + 0.5) / 16.0 * 255.0;
+            map[i][j] = (map[i][j] + 0.5) / 16.0;
         }
     }
     for (size_t i = 0; i < h; i++) {
@@ -340,7 +344,11 @@ void PNM::halftone() {
             if (next == current) {
                 current = changeBit(limitPixel((double) next - (1u << (8 - bit))));
             }
-            drawPixel(i, j, gammaCorrection(getPixel(i, j) / 255.0) * 255.0 >= map[i % 4][j % 4] ? next : current);
+            double nextGammaValue = gammaCorrection(next / 255.0) * 255.0 - gammaCorrection(current / 255.0) * 255.0;
+            double curGammaValue =
+                    gammaCorrection(getPixel(i, j) / 255.0) * 255.0 - gammaCorrection(current / 255.0) * 255.0 +
+                    (map[i%4][j%4] - 0.5) * nextGammaValue;
+            drawPixel(i, j, curGammaValue >= nextGammaValue / 2.0 ? next : current);
         }
     }
 }

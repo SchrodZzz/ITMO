@@ -25,7 +25,7 @@ private:
     double* gradient;
     int w, h, maxValue;
 
-    uint bit;
+    unsigned int bit;
     double gamma;
 
     void drawGradient();
