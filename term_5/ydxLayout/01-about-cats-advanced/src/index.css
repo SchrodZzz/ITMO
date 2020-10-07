@@ -1,0 +1,419 @@
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: local('PT Sans Narrow');
+}
+
+@font-face {
+  font-family: 'Embrionic 85 Swash';
+  src: local('Embrionic85SwashCyr');
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.header {
+  border-bottom: 1px solid #d3d3d3;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.store-name {
+  font-size: 32px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: normal;
+  margin: 5px;
+}
+
+.store-name::first-letter {
+  color: #f00;
+}
+
+.header-wrapper {
+  height: 60px;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid #d3d3d3;
+  width: 100%;
+  font: 14px Arial, Helvetica, sans-serif;
+  background-color: #fff;
+}
+
+.float-left {
+  float: left;
+}
+
+.right-footer-element {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.footer-element {
+  margin: 10px 20px 20px;
+}
+
+.left-footer-info {
+  color: #d3d3d3;
+}
+
+.footer > .footer-element > a {
+  color: #4c4cd8;
+}
+
+.footer > .footer-element > .email::before {
+  content: '';
+  display: inline-block;
+  background-image: url(img/mail.jpeg);
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  padding-right: 0.22em;
+  margin-right: 8px;
+}
+
+.email {
+  text-decoration: none;
+}
+
+.carousel {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 100px;
+  width: 700%;
+  height: 65%;
+  transition: left 1s ease-in-out;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 100%;
+}
+
+.carousel-wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+
+.switcher {
+  display: none;
+}
+
+.carousel-pointers {
+  position: absolute;
+  top: 80%;
+  text-align: center;
+  list-style: none;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.carousel-pointers > li {
+  display: inline-block;
+}
+
+.carousel-pointer {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #ddd;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.carousel-1:checked ~ .carousel-pointers li:nth-child(1) > .carousel-pointer,
+.carousel-2:checked ~ .carousel-pointers li:nth-child(2) > .carousel-pointer,
+.carousel-3:checked ~ .carousel-pointers li:nth-child(3) > .carousel-pointer,
+.carousel-4:checked ~ .carousel-pointers li:nth-child(4) > .carousel-pointer,
+.carousel-5:checked ~ .carousel-pointers li:nth-child(5) > .carousel-pointer,
+.carousel-6:checked ~ .carousel-pointers li:nth-child(6) > .carousel-pointer,
+.carousel-7:checked ~ .carousel-pointers li:nth-child(7) > .carousel-pointer,
+.carousel-8:checked ~ .carousel-pointers li:nth-child(8) > .carousel-pointer,
+.carousel-9:checked ~ .carousel-pointers li:nth-child(9) > .carousel-pointer,
+.carousel-10:checked ~ .carousel-pointers li:nth-child(10) > .carousel-pointer {
+  background-color: #aaa;
+}
+
+.carousel-item {
+  display: inline-block;
+  width: 8%;
+  margin: 10px;
+  background-size: cover;
+  background-position: center center;
+  opacity: .7;
+  position: relative;
+  height: 80%;
+  bottom: 10%;
+}
+
+.carousel-item label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 70;
+}
+
+.item-1 {
+  background-image: url(img/1.jpg);
+}
+
+.item-2 {
+  background-image: url(img/2.jpg);
+}
+
+.item-3 {
+  background-image: url(img/3.jpg);
+}
+
+.item-4 {
+  background-image: url(img/4.jpg);
+}
+
+.item-5 {
+  background-image: url(img/5.jpg);
+}
+
+.item-6 {
+  background-image: url(img/6.jpg);
+}
+
+.item-7 {
+  background-image: url(img/7.jpg);
+}
+
+.item-8 {
+  background-image: url(img/8.jpg);
+}
+
+.item-9 {
+  background-image: url(img/9.jpg);
+}
+
+.item-10 {
+  background-image: url(img/10.jpg);
+}
+
+.carousel-1:checked ~ .carousel {
+  left: 23%;
+}
+
+.carousel-2:checked ~ .carousel {
+  left: -35%;
+}
+
+.carousel-3:checked ~ .carousel {
+  left: -95%;
+}
+
+.carousel-4:checked ~ .carousel {
+  left: -152%;
+}
+
+.carousel-5:checked ~ .carousel {
+  left: -210%;
+}
+
+.carousel-6:checked ~ .carousel {
+  left: -265%;
+}
+
+.carousel-7:checked ~ .carousel {
+  left: -323%;
+}
+
+.carousel-8:checked ~ .carousel {
+  left: -380%;
+}
+
+.carousel-9:checked ~ .carousel {
+  left: -438%;
+}
+
+.carousel-10:checked ~ .carousel {
+  left: -496%;
+}
+
+.carousel-1:checked ~ .carousel > .item-1,
+.carousel-2:checked ~ .carousel > .item-2,
+.carousel-3:checked ~ .carousel > .item-3,
+.carousel-4:checked ~ .carousel > .item-4,
+.carousel-5:checked ~ .carousel > .item-5,
+.carousel-6:checked ~ .carousel > .item-6,
+.carousel-7:checked ~ .carousel > .item-7,
+.carousel-8:checked ~ .carousel > .item-8,
+.carousel-9:checked ~ .carousel > .item-9,
+.carousel-10:checked ~ .carousel > .item-10 {
+  height: 100%;
+  top: 0;
+  opacity: 1;
+}
+
+.name-only {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 0;
+  cursor: pointer;
+}
+
+.cat-name {
+  font-size: 50px;
+  color: #fff;
+  font-family: 'Embrionic 85 Swash', sans-serif;
+  text-align: center;
+}
+
+.modal-label {
+  display: none;
+}
+
+.carousel-1:checked ~ .carousel .item-1:hover .name-only,
+.carousel-2:checked ~ .carousel .item-2:hover .name-only,
+.carousel-3:checked ~ .carousel .item-3:hover .name-only,
+.carousel-4:checked ~ .carousel .item-4:hover .name-only,
+.carousel-5:checked ~ .carousel .item-5:hover .name-only,
+.carousel-6:checked ~ .carousel .item-6:hover .name-only,
+.carousel-7:checked ~ .carousel .item-7:hover .name-only,
+.carousel-8:checked ~ .carousel .item-8:hover .name-only,
+.carousel-9:checked ~ .carousel .item-9:hover .name-only,
+.carousel-10:checked ~ .carousel .item-10:hover .name-only {
+  visibility: visible;
+}
+
+.carousel-1:checked ~ .carousel .item-1 .modal-label,
+.carousel-2:checked ~ .carousel .item-2 .modal-label,
+.carousel-3:checked ~ .carousel .item-3 .modal-label,
+.carousel-4:checked ~ .carousel .item-4 .modal-label,
+.carousel-5:checked ~ .carousel .item-5 .modal-label,
+.carousel-6:checked ~ .carousel .item-6 .modal-label,
+.carousel-7:checked ~ .carousel .item-7 .modal-label,
+.carousel-8:checked ~ .carousel .item-8 .modal-label,
+.carousel-9:checked ~ .carousel .item-9 .modal-label,
+.carousel-10:checked ~ .carousel .item-10 .modal-label {
+  display: block;
+}
+
+.desc-container {
+  display: block;
+  padding: 70px 0 0;
+}
+
+.desc-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .9);
+  z-index: -1;
+  visibility: hidden;
+}
+
+.description {
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+  display: none;
+  color: #fff;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.cat-img {
+  width: 80%;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.close-label {
+  position: absolute;
+  top: 0;
+  margin: 0 20px;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+.close-label:hover {
+  color: #ddd;
+  transition: 0.2s;
+  transform: rotate(180deg);
+}
+
+.checkbox-1:checked ~ .carousel-wrapper .carousel > .item-1:hover .name-only,
+.checkbox-2:checked ~ .carousel-wrapper .carousel > .item-2:hover .name-only,
+.checkbox-3:checked ~ .carousel-wrapper .carousel > .item-3:hover .name-only,
+.checkbox-4:checked ~ .carousel-wrapper .carousel > .item-4:hover .name-only,
+.checkbox-5:checked ~ .carousel-wrapper .carousel > .item-5:hover .name-only,
+.checkbox-6:checked ~ .carousel-wrapper .carousel > .item-6:hover .name-only,
+.checkbox-7:checked ~ .carousel-wrapper .carousel > .item-7:hover .name-only,
+.checkbox-8:checked ~ .carousel-wrapper .carousel > .item-8:hover .name-only,
+.checkbox-9:checked ~ .carousel-wrapper .carousel > .item-9:hover .name-only,
+.checkbox-10:checked ~ .carousel-wrapper .carousel > .item-10:hover .name-only {
+  visibility: hidden;
+  z-index: -100;
+}
+
+.checkbox-1:checked ~ .desc-container::before,
+.checkbox-2:checked ~ .desc-container::before,
+.checkbox-3:checked ~ .desc-container::before,
+.checkbox-4:checked ~ .desc-container::before,
+.checkbox-5:checked ~ .desc-container::before,
+.checkbox-6:checked ~ .desc-container::before,
+.checkbox-7:checked ~ .desc-container::before,
+.checkbox-8:checked ~ .desc-container::before,
+.checkbox-9:checked ~ .desc-container::before,
+.checkbox-10:checked ~ .desc-container::before {
+  visibility: visible;
+  z-index: 0;
+}
+
+.checkbox-1:checked ~ .desc-container,
+.checkbox-2:checked ~ .desc-container,
+.checkbox-3:checked ~ .desc-container,
+.checkbox-4:checked ~ .desc-container,
+.checkbox-5:checked ~ .desc-container,
+.checkbox-6:checked ~ .desc-container,
+.checkbox-7:checked ~ .desc-container,
+.checkbox-8:checked ~ .desc-container,
+.checkbox-9:checked ~ .desc-container,
+.checkbox-10:checked ~ .desc-container {
+  z-index: 11;
+  display: block;
+}
+
+.checkbox-1:checked ~ .desc-container > .description:nth-child(1),
+.checkbox-2:checked ~ .desc-container > .description:nth-child(2),
+.checkbox-3:checked ~ .desc-container > .description:nth-child(3),
+.checkbox-4:checked ~ .desc-container > .description:nth-child(4),
+.checkbox-5:checked ~ .desc-container > .description:nth-child(5),
+.checkbox-6:checked ~ .desc-container > .description:nth-child(6),
+.checkbox-7:checked ~ .desc-container > .description:nth-child(7),
+.checkbox-8:checked ~ .desc-container > .description:nth-child(8),
+.checkbox-9:checked ~ .desc-container > .description:nth-child(9),
+.checkbox-10:checked ~ .desc-container > .description:nth-child(10) {
+  display: block;
+}

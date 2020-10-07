@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="index.css" type="text/css">
+  <title>02-about-cats-advanced</title>
+</head>
+<body>
+<header class="fixed header">
+  <h2 class="store-name">Мюрмаркет</h2>
+</header>
+
+<input type="checkbox" class="switcher temp checkbox-1" id="modal-1">
+<input type="checkbox" class="switcher temp checkbox-2" id="modal-2">
+<input type="checkbox" class="switcher temp checkbox-3" id="modal-3">
+<input type="checkbox" class="switcher temp checkbox-4" id="modal-4">
+<input type="checkbox" class="switcher temp checkbox-5" id="modal-5">
+<input type="checkbox" class="switcher temp checkbox-6" id="modal-6">
+<input type="checkbox" class="switcher temp checkbox-7" id="modal-7">
+<input type="checkbox" class="switcher temp checkbox-8" id="modal-8">
+<input type="checkbox" class="switcher temp checkbox-9" id="modal-9">
+<input type="checkbox" class="switcher temp checkbox-10" id="modal-10">
+
+<main class="carousel-wrapper">
+  <input type="radio" class="switcher carousel-1" id="carousel-1" name="carousel">
+  <input type="radio" class="switcher carousel-2" id="carousel-2" name="carousel">
+  <input type="radio" class="switcher carousel-3" id="carousel-3" name="carousel">
+  <input type="radio" class="switcher carousel-4" id="carousel-4" name="carousel">
+  <input type="radio" class="switcher carousel-5" id="carousel-5" name="carousel">
+  <input type="radio" class="switcher carousel-6" id="carousel-6" name="carousel" checked>
+  <input type="radio" class="switcher carousel-7" id="carousel-7" name="carousel">
+  <input type="radio" class="switcher carousel-8" id="carousel-8" name="carousel">
+  <input type="radio" class="switcher carousel-9" id="carousel-9" name="carousel">
+  <input type="radio" class="switcher carousel-10" id="carousel-10" name="carousel">
+
+  <div class="carousel">
+    <div class="carousel-item item-1">
+      <label for="carousel-1"></label>
+      <label class="modal-label" for="modal-1"></label>
+      <div class="name-only">
+        <h3 class="cat-name">Барсик</h3>
+      </div>
+    </div>
+    <div class="carousel-item item-2">
+      <label for="carousel-2"></label>
+      <label class="modal-label" for="modal-2"></label>
+      <div class="name-only">
+        <h3 class="cat-name">Бyрсик</h3>
+      </div>
+    </div>
+    <div class="carousel-item item-3">
+      <label for="carousel-3"></label>
+      <label class="modal-label" for="modal-3"></label>
+      <div class="name-only">
+        <h3 class="cat-name">Бирсик</h3>
+      </div>
+    </div>
+    <div class="carousel-item item-4">
+      <label for="carousel-4"></label>
+      <label class="modal-label" for="modal-4"></label>
+      <div class="name-only">
+        <h3 class="cat-name">Барсёк</h3>
+      </div>
+    </div>
+    <div class="carousel-item item-5">
+      <label for="carousel-5"></label>
+      <label class="modal-label" for="modal-5"></label>
+      <div class="name-only">
+        <h3 class="cat-name">Бёрсик</h3>
+      </div>
+    </div>
+    <div class="carousel-item item-6">
+      <label for="carousel-6"></label>
+      <label class="modal-label" for="modal-6"></label>
+      <div class="name-only">
+        <h3 class="cat-name">Борсик</h3>
+      </div>
+    </div>
+    <div class="carousel-item item-7">
+      <label for="carousel-7"></label>
+      <label class="modal-label" for="modal-7"></label>
+      <div class="name-only">
+        <h3 class="cat-name">Барсэк</h3>
+      </div>
+    </div>
+    <div class="carousel-item item-8">
+      <label for="carousel-8"></label>
+      <label class="modal-label" for="modal-8"></label>
+      <div class="name-only">
+        <h3 class="cat-name">Бюрсик</h3>
+      </div>
+    </div>
+    <div class="carousel-item item-9">
+      <label for="carousel-9"></label>
+      <label class="modal-label" for="modal-9"></label>
+      <div class="name-only">
+        <h3 class="cat-name">Бырсик</h3>
+      </div>
+    </div>
+    <div class="carousel-item item-10">
+      <label for="carousel-10"></label>
+      <label class="modal-label" for="modal-10"></label>
+      <div class="name-only">
+        <h3 class="cat-name">Бирсэк</h3>
+      </div>
+    </div>
+  </div>
+
+  <ul class="carousel-pointers">
+    <li>
+      <label class="carousel-pointer" for="carousel-1"></label>
+    </li>
+    <li>
+      <label class="carousel-pointer" for="carousel-2"></label>
+    </li>
+    <li>
+      <label class="carousel-pointer" for="carousel-3"></label>
+    </li>
+    <li>
+      <label class="carousel-pointer" for="carousel-4"></label>
+    </li>
+    <li>
+      <label class="carousel-pointer" for="carousel-5"></label>
+    </li>
+    <li>
+      <label class="carousel-pointer" for="carousel-6"></label>
+    </li>
+    <li>
+      <label class="carousel-pointer" for="carousel-7"></label>
+    </li>
+    <li>
+      <label class="carousel-pointer" for="carousel-8"></label>
+    </li>
+    <li>
+      <label class="carousel-pointer" for="carousel-9"></label>
+    </li>
+    <li>
+      <label class="carousel-pointer" for="carousel-10"></label>
+    </li>
+  </ul>
+</main>
+
+<div class="desc-container">
+  <section class="description">
+    <img class="cat-img" src="img/1.jpg" alt="Smudge">
+    <label class="close-label" for="modal-1">&#x2715;</label>
+    <div>
+      <h3>Барсик</h3>
+      <p>
+        Возраст: 1 год<br>
+        Порода: нет<br>
+        Болезни: нет<br><br>
+        Статус: Разочаруй меня!
+      </p>
+    </div>
+  </section>
+  <section class="description">
+    <img class="cat-img" src="img/2.jpg" alt="Smudge">
+    <label class="close-label" for="modal-2">&#x2715;</label>
+    <div>
+      <h3>Бyрсик</h3>
+      <p>
+        Возраст: 2 месяца<br>
+        Порода: нет<br>
+        Болезни: нет<br><br>
+        Статус: Жизнь не рояль.
+      </p>
+    </div>
+  </section>
+  <section class="description">
+    <img class="cat-img" src="img/3.jpg" alt="Smudge">
+    <label class="close-label" for="modal-3">&#x2715;</label>
+    <div>
+      <h3>Бирсик</h3>
+      <p>
+        Возраст: 3 года<br>
+        Порода: нет<br>
+        Болезни: нет<br><br>
+        Статус: Любите себя.
+      </p>
+    </div>
+  </section>
+  <section class="description">
+    <img class="cat-img" src="img/4.jpg" alt="Smudge">
+    <label class="close-label" for="modal-4">&#x2715;</label>
+    <div>
+      <h3>Барсёк</h3>
+      <p>
+        Возраст: 5 лет<br>
+        Порода: нет<br>
+        Болезни: нет<br><br>
+        Статус: Журавль в руках.
+      </p>
+    </div>
+  </section>
+  <section class="description">
+    <img class="cat-img" src="img/5.jpg" alt="Smudge">
+    <label class="close-label" for="modal-5">&#x2715;</label>
+    <div>
+      <h3>Бёрсик</h3>
+      <p>
+        Возраст: 9 месяцев<br>
+        Порода: нет<br>
+        Болезни: нет<br><br>
+        Статус: Улыбайся. Это важно.
+      </p>
+    </div>
+  </section>
+  <section class="description">
+    <img class="cat-img" src="img/6.jpg" alt="Smudge">
+    <label class="close-label" for="modal-6">&#x2715;</label>
+    <div class="desc-text">
+      <h3>Борсик</h3>
+      <p>
+        Возраст: 3 месяца<br>
+        Порода: нет<br>
+        Болезни: нет<br><br>
+        Статус: Откажись от обид.
+      </p>
+    </div>
+  </section>
+  <section class="description">
+    <img class="cat-img" src="img/7.jpg" alt="Smudge">
+    <label class="close-label" for="modal-7">&#x2715;</label>
+    <div>
+      <h3>Барсэк</h3>
+      <p>
+        Возраст: 2 года<br>
+        Порода: нет<br>
+        Болезни: нет<br><br>
+        Статус: Подними настроение.
+      </p>
+    </div>
+  </section>
+  <section class="description">
+    <img class="cat-img" src="img/8.jpg" alt="Smudge">
+    <label class="close-label" for="modal-8">&#x2715;</label>
+    <div>
+      <h3>Бюрсик</h3>
+      <p>
+        Возраст: 6 месяцев<br>
+        Порода: нет<br>
+        Болезни: нет<br><br>
+        Статус: Доступная некрасива.
+      </p>
+    </div>
+  </section>
+  <section class="description">
+    <img class="cat-img" src="img/9.jpg" alt="Smudge">
+    <label class="close-label" for="modal-9">&#x2715;</label>
+    <div>
+      <h3>Бырсик</h3>
+      <p>
+        Возраст: 1 год<br>
+        Порода: нет<br>
+        Болезни: нет<br><br>
+        Статус: Обидеть легко.
+      </p>
+    </div>
+  </section>
+  <section class="description">
+    <img class="cat-img" src="img/10.jpg" alt="Smudge">
+    <label class="close-label" for="modal-10">&#x2715;</label>
+    <div>
+      <h3>Бирсэк</h3>
+      <p>
+        Возраст: 2 года<br>
+        Порода: нет<br>
+        Болезни: нет<br><br>
+        Статус: Глаза не лгут.
+      </p>
+    </div>
+  </section>
+</div>
+
+<footer class="fixed footer">
+  <div class="float-left left-footer-info footer-element">
+    Напишите нам:
+    <br>
+    <a class="email" href="#">palico@babuli.ru</a>
+    <br>
+    <a class="email" href="#">a.ivshin@babuli.ru</a>
+  </div>
+  <div class="right-footer-element footer-element">
+    &copy; 2048 ООО«<a href="#">Бабушкины палико</a>»
+  </div>
+</footer>
+</body>
+</html>
