@@ -1,51 +1,187 @@
 'use strict';
 
-const robbery = require('./C');
+const { getEmitter } = require('./D');
 
-const gangSchedule = {
-    Danny: [{ from: 'ПН 12:00+2', to: 'ПН 17:00+2' }],
-    Rusty: [{ from: 'ПН 11:30+9', to: 'ПН 16:30+9' }],
-    Linus: [
-    { from: 'ПН 09:00+3', to: 'ПН 14:00+3' },
-    ]
+let students = {
+  Sam: {
+    focus: 100,
+    wisdom: 50
+  },
+  Sally: {
+    focus: 100,
+    wisdom: 60
+  },
+  Bill: {
+    focus: 90,
+    wisdom: 50
+  },
+  Sharon: {
+    focus: 110,
+    wisdom: 40
+  }
 };
 
-const bankWorkingHours = {
-    from: '10:00+1',
-    to: '18:00+1'
+let lecturer = getEmitter();
+
+// С началом лекции у всех резко повышаются показатели
+lecturer
+  .on('begin', students.Sam, function () {
+    this.focus += 10;
+  })
+  .on('begin', students.Sally, function () {
+    this.focus += 10;
+  })
+  .on('begin', students.Bill, function () {
+    this.focus += 10;
+    this.wisdom += 5;
+  })
+  .on('begin', students.Sharon, function () {
+    this.focus += 20;
+  });
+
+// На каждый слайд внимательность падает, но растет мудрость
+lecturer
+  .on('slide', students.Sam, function () {
+    this.wisdom += Math.round(this.focus * 0.1);
+    this.focus -= 10;
+  })
+  .on('slide', students.Sally, function () {
+    this.wisdom += Math.round(this.focus * 0.15);
+    this.focus -= 5;
+  })
+  .on('slide', students.Bill, function () {
+    this.wisdom += Math.round(this.focus * 0.05);
+    this.focus -= 10;
+  })
+  .on('slide', students.Sharon, function () {
+    this.wisdom += Math.round(this.focus * 0.01);
+    this.focus -= 5;
+  });
+
+// На каждый веселый слайд всё наоборот
+lecturer
+  .on('slide.funny', students.Sam, function () {
+    this.focus += 5;
+    this.wisdom -= 10;
+  })
+  .on('slide.funny', students.Sally, function () {
+    this.focus += 5;
+    this.wisdom -= 5;
+  })
+  .on('slide.funny', students.Bill, function () {
+    this.focus += 5;
+    this.wisdom -= 10;
+  })
+  .on('slide.funny', students.Sharon, function () {
+    this.focus += 10;
+    this.wisdom -= 10;
+  });
+
+// Начинаем лекцию
+lecturer.emit('begin');
+console.log(students)
+// Sam(110,50); Sally(110,60); Bill(100,55); Sharon(130,40)
+
+lecturer
+  .emit('slide.text')
+  .emit('slide.text')
+  .emit('slide.text')
+  .emit('slide.funny');
+// Sam(75,79); Sally(95,118); Bill(65,63); Sharon(120,34)
+console.log(students)
+
+lecturer
+  .off('slide.funny', students.Sharon)
+  .emit('slide.text')
+  .emit('slide.text')
+  .emit('slide.funny');
+// Sam(50,90); Sally(85,155); Bill(40,62); Sharon(105,37)
+console.log(students)
+
+lecturer
+  .off('slide', students.Bill)
+  .emit('slide.text')
+  .emit('slide.text')
+  .emit('slide.text');
+
+lecturer.emit('end');
+// Sam(20,102); Sally(70,191); Bill(40,62); Sharon(90,40)
+console.log(students)
+
+// Пример работы дополнительного задания
+students = {
+  Sam: {
+    focus: 100,
+    wisdom: 50
+  },
+  Bill: {
+    focus: 90,
+    wisdom: 50
+  }
 };
 
-// Время не существует
-const longMoment = robbery.getAppropriateMoment(gangSchedule, 200, bankWorkingHours);
+lecturer = getEmitter()
+  .several(
+    'begin',
+    students.Sam,
+    function () {
+      this.focus += 10;
+    },
+    1
+  )
+  .several(
+    'begin',
+    students.Bill,
+    function () {
+      this.focus += 10;
+      this.wisdom += 5;
+    },
+    1
+  )
+  // На Сэма действуют только нечетные слайды
+  .through(
+    'slide',
+    students.Sam,
+    function () {
+      this.wisdom += Math.round(this.focus * 0.1);
+      this.focus -= 10;
+    },
+    2
+  )
+  // Концентрации Билла хватит ровно на 4 слайда
+  .several(
+    'slide',
+    students.Bill,
+    function () {
+      this.wisdom += Math.round(this.focus * 0.05);
+      this.focus -= 10;
+    },
+    4
+  )
+  .on('slide.funny', students.Sam, function () {
+    this.focus += 5;
+    this.wisdom -= 10;
+  })
+  .on('slide.funny', students.Bill, function () {
+    this.focus += 5;
+    this.wisdom -= 10;
+  });
 
-// Выведется `false` и `""`
-console.info(longMoment.exists());
-console.info(longMoment.format('Метим на %DD, старт в %HH:%MM!'));
+lecturer.emit('begin');
+// Sam(110,50); Bill(100,55)
+console.log(students)
 
-// Время существует
-const moment = robbery.getAppropriateMoment(gangSchedule, 90, bankWorkingHours);
+lecturer
+  .emit('slide.text')
+  .emit('slide.text')
+  .emit('slide.text')
+  .emit('slide.funny');
+// Sam(95,61); Bill(65,63)
+console.log(students)
 
-// Выведется `true` и `"Метим на ВТ, старт в 11:30!"`
-console.info(moment.exists());
-console.info(moment.format('Метим на %DD, старт в %HH:%MM!'));
-
-// Дополнительное задание
-// Вернет `true`
-moment.tryLater();
-// `"ВТ 16:00"`
-console.info(moment.format('%DD %HH:%MM'));
-
-// Вернет `true`
-moment.tryLater();
-// `"ВТ 16:30"`
-console.info(moment.format('%DD %HH:%MM'));
-
-// Вернет `true`
-moment.tryLater();
-// `"СР 10:00"`
-console.info(moment.format('%DD %HH:%MM'));
-
-// Вернет `false`
-moment.tryLater();
-// `"СР 10:00"`
-console.info(moment.format('%DD %HH:%MM'));
+lecturer
+  .emit('slide.text')
+  .emit('slide.text')
+  .emit('slide.funny');
+// Sam(80,70); Bill(70,53)
+console.log(students)
