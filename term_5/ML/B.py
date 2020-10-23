@@ -1,37 +1,9 @@
-k = int(input())
-cm = []
-for _ in range(k):
-    cm.append(list(map(int, input().split())))
+f1 = lambda p, r: 0 if p + r == 0 else 2 * (p * r) / (p + r)
 
+k = int(input())
+cm = [list(map(int, input().split())) for _ in range(k)]
 rs = [sum(row) for row in cm]
 cs = list(map(sum, zip(*cm)))
-gs = sum(rs)
 
-
-def f1(p, r):
-    return 0 if p + r == 0 else 2 * (p * r) / (p + r)
-
-
-def macro():
-    prc = sum([0 if cs[i] == 0 else cm[i][i] * rs[i] / cs[i] for i in range(k)]) / gs
-    rec = sum([cm[i][i] for i in range(k)]) / gs
-
-    return f1(prc, rec)
-
-
-def micro():
-    tmp = 0
-    for i in range(k):
-        tp = cm[i][i]
-        fp = rs[i] - cm[i][i]
-        fn = cs[i] - cm[i][i]
-
-        prc = 0 if tp + fp == 0 else tp / (tp + fp)
-        rec = 0 if tp + fn == 0 else tp / (tp + fn)
-
-        tmp += rs[i] * f1(prc, rec) / gs
-
-    return tmp
-
-
-print(macro(), micro(), sep='\n')
+print(f1(sum([0 if cs[i] == 0 else cm[i][i] * rs[i] / cs[i] for i in range(k)]) / sum(rs), sum([cm[i][i] for i in range(k)]) / sum(rs)))
+print(sum([rs[i] * f1(0 if cm[i][i] + rs[i] - cm[i][i] == 0 else cm[i][i] / (cm[i][i] + rs[i] - cm[i][i]), 0 if cm[i][i] + cs[i] - cm[i][i] == 0 else cm[i][i] / (cm[i][i] + cs[i] - cm[i][i])) / sum(rs) for i in range(k)]))
