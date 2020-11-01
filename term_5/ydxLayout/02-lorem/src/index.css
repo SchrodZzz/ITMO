@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css?family=Rakkas&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Tangerine&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Kameron&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 99%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
+    padding: 1%;
+
+    --light-color: #f5f5f5;
+    --dark-color: #333333;
+    --middle-color: #a9a9a9;
+}
+
+.body__content {
+    border: 2px solid var(--middle-color);
+
+    transition: 0.2s;
+
+    background-color: var(--light-color);
+
+    color: var(--dark-color);
+}
+
+.body__input {
+    display: none;
+}
+
+#theme-dark:checked ~ .body__content .theme-dark,
+#font-size_small:checked ~ .body__content .font-size_small,
+#font-size_medium:checked ~ .body__content .font-size_medium,
+#font-size_large:checked ~ .body__content .font-size_large,
+#font-style_comic-sans:checked ~ .body__content .font-style_comic-sans {
+    font-weight: bold;
+}
+
+#theme-dark:checked ~ .body__content {
+    --light-color: #333333;
+    --dark-color: #f5f5f5;
+}
+
+#font-style_comic-sans:checked ~ .body__content p {
+    font-family: 'Comic Sans MS', fantasy;
+}
+
+#font-size_small:checked ~ .body__content {
+    font-size: 0.8rem;
+}
+
+#font-size_large:checked ~ .body__content {
+    font-size: 1.05rem;
+}
+
+.quote {
+    background-color: var(--middle-color);
+}
+
+.quote::before {
+    content: '\201C ';
+
+    font-weight: bold;
+}
+
+.quote::after {
+    content: '\\';
+}
+
+.page__header {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-areas: 'box1 title box2';
+    grid-template-columns: 300px 1fr 300px;
+
+    width: 100%;
+
+    margin: 20px 0 20px 0;
+}
+
+.header__title {
+    grid-area: title;
+
+    width: 100%;
+
+    font-family: 'Rakkas', cursive;
+    font-size: 5vw;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+.header__p01 {
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    grid-area: box1;
+
+    box-sizing: border-box;
+
+    width: 200px;
+    height: 100px;
+
+    padding: 10px;
+
+    border: 1px var(--dark-color) solid;
+}
+
+.header__p01-content {
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+}
+
+.header__p02 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    justify-content: center;
+    grid-area: box2;
+
+    box-sizing: border-box;
+
+    width: 200px;
+    height: 100px;
+
+    padding: 10px;
+
+    border: 1px var(--dark-color) solid;
+
+    font-family: 'Roboto Mono', monospace;
+    text-align: center;
+}
+
+.header__p02-title {
+    text-transform: uppercase;
+}
+
+.page__release-info {
+    display: grid;
+    grid-template-areas: 'num date price';
+    grid-template-columns: 1fr 1fr 1fr;
+
+    box-sizing: border-box;
+
+    border-top: 5px var(--dark-color) double;
+    border-bottom: 5px var(--dark-color) double;
+
+    text-transform: uppercase;
+}
+
+.release__number {
+    justify-self: start;
+    grid-area: num;
+
+    padding-left: 5px;
+}
+
+.release__date {
+    justify-self: center;
+    grid-area: date;
+}
+
+.release__price {
+    justify-self: end;
+    grid-area: price;
+
+    padding-right: 5px;
+}
+
+.page__content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 0.7fr;
+
+    margin: 5px;
+}
+
+.content-col01 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    padding: 10px;
+
+    border-right: 1px var(--dark-color) solid;
+}
+
+.col01-title,
+.col02-title {
+    font-family: 'Suez One', serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.col01-under-title {
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+}
+
+.col01-img {
+    display: flex;
+    justify-content: space-between;
+
+    font-family: 'Tangerine', cursive;
+}
+
+.col01-img img {
+    width: 150px;
+    height: 150px;
+
+    padding: 2px;
+
+    border: 3px double var(--dark-color);
+}
+
+.col01-text {
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+}
+
+.content-col02 {
+    display: grid;
+    grid-template-areas: 'title3 title3' 'img3 headers';
+
+    padding-left: 10px;
+
+    border-right: 1px var(--dark-color) solid;
+}
+
+.col02-title {
+    grid-area: title3;
+
+    padding: 10px;
+
+    border-bottom: 3px var(--dark-color) double;
+}
+
+.col02-img {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+    grid-area: img3;
+
+    padding: 10px;
+
+    border-right: 1px var(--dark-color) solid;
+}
+
+.col02-img img {
+    align-self: center;
+
+    width: 200px;
+    height: 200px;
+
+    padding: 2px;
+
+    border: 3px double var(--dark-color);
+}
+
+.col02-img-title {
+    font-family: 'Rozha One', serif;
+    text-align: center;
+}
+
+.col02-img-content {
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+}
+
+.col02-headers {
+    justify-content: space-around;
+    grid-area: headers;
+
+    padding: 10px;
+
+    text-align: center;
+}
+
+.col02-header1,
+.col02-header3,
+.col02-header5 {
+    font-family: 'Roboto Mono', monospace;
+    text-transform: uppercase;
+}
+
+.col02-header2,
+.col02-header4 {
+    font-family: 'Kameron', serif;
+}
+
+.col02-par {
+    font-family: 'Old Standard TT', serif;
+}
+
+.content-col03 {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-around;
+
+    margin: 10px;
+
+    text-align: center;
+}
+
+.col03-header1 {
+    font-family: 'Rozha One', serif;
+}
+
+.col03-par {
+    font-family: 'Old Standard TT', serif;
+}
+
+.line {
+    margin: 10px 30px 10px 30px;
+
+    border-bottom: 1px var(--dark-color) solid;
+
+    transition: 0.2s;
+}
+
+.line-double {
+    margin: 10px 30px 10px 30px;
+
+    border-bottom: 3px var(--dark-color) double;
+
+    transition: 0.2s;
+}
+
+.content__menu {
+    text-align: center;
+}
+
+.menu-item {
+    margin: 10px 0;
+}
+
+.menu__label {
+    transition: 0.2s;
+
+    color: var(--middle-color);
+
+    cursor: pointer;
+}
