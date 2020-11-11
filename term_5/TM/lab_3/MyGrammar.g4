@@ -30,6 +30,7 @@ expression returns [int val]
     | number { $val = $number.val; }
     | MINUS expression { $val = -$expression.val; }
     | assignment { $val = $assignment.val; }
+    | <assoc=right> left=expression POW rigth=expression { $val = (int) Math.pow($left.val, $rigth.val); }
     | left=expression op=(MUL|DIV) rigth=expression { $val = $op.type == MUL ? $left.val * $rigth.val : $left.val / $rigth.val; }
     | left=expression op=(PLUS|MINUS) rigth=expression { $val = $op.type == PLUS ? $left.val + $rigth.val : $left.val - $rigth.val; }
     | expression ESTER expression { $val = 1337; }
@@ -51,6 +52,7 @@ WHITESPACES : [ \n\t\r] -> skip;
 PLUS        : '+';
 MINUS       : '-';
 MUL         : '*';
+POW         : '**';
 DIV         : '/';
 ESTER       : '@';
 LBRACER     : '(';

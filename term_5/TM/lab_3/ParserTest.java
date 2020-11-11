@@ -104,6 +104,27 @@ public class ParserTest {
                 expectedPairs("a", max, "b", min, "c", -1, "d", -1));
     }
 
+    @Test
+    public void testPow() {
+        test("""
+                        a = 2;
+                        b = 3;
+                        c = a ** b;
+                        d = c ** 2;
+                        """,
+                expectedPairs("a", 2, "b", 3, "c", 8, "d", 64));
+    }
+
+    @Test
+    public void testPowAssoc() {
+        test("""
+                        a = 2;
+                        b = 3;
+                        c = a ** b ** 2;
+                        """,
+                expectedPairs("a", 2, "b", 3, "c", 512));
+    }
+
 
     // MARK: Private
 
