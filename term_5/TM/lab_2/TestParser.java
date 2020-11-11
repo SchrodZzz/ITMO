@@ -22,6 +22,7 @@ public class TestParser {
         parser.process("size_t f();");
     }
 
+
     @Test
     public void testArg() {
         parser.process("ll f(ll var);");
@@ -33,10 +34,17 @@ public class TestParser {
 
     @Test
     public void testRand() {
-        parser.process("int func(s*,type1);"); // empty name is fine (-S
+        parser.process("int f(s*a,type1 a, type&b);"); // non-space arg with \& or \* as sep (-S
         parser.process("hehehehe hehehehe(heheheh **&heheheheheheh);");
         parser.process("long func(int *a, string s, long ***b, bool f, int e, int **q);");
         parser.process("int func(int **n, ff &b, string param1, _lon *&x, ttt *****&z);");
         parser.process("_ _tp123    (     type **var     )   ;");
+    }
+
+    @Test
+    public void testArr() {
+        parser.process("int[] f();");
+        parser.process("int[] f(ll[] arg);");
+        parser.process("int[] f(ll[] arg, int arg, multi[][][][][][][][][][] matrix);");
     }
 }

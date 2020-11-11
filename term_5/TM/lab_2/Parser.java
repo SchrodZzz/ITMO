@@ -69,12 +69,23 @@ public class Parser {
                             break;
                         } else {
                             if (!isOk(data.charAt(tmpIdx))) {
-                                expected(String.format("known symbol, but got: '%c'", data.charAt(tmpIdx)));
+                                if (isArr(data.charAt(tmpIdx), data.charAt(tmpIdx + 1))) {
+                                    tokens.add(Token.NAME);
+                                    while (tmpIdx + 1 < data.length() && isArr(data.charAt(tmpIdx), data.charAt(tmpIdx + 1))) {
+                                        tokens.add(Token.ARR);
+                                        tmpIdx += 2;
+                                    }
+                                    break;
+                                } else {
+                                    expected(String.format("known symbol, but got: '%c'", data.charAt(tmpIdx)));
+                                }
                             } else {
                                 tmpIdx += 1;
                             }
                         }
                     }
+                } else {
+                    expected("name after " + tokens.get(tokens.size()-1));
                 }
             }
         }
@@ -98,6 +109,10 @@ public class Parser {
 
     private boolean isOk(Character ch) {
         return (ch >= '0' && ch <= '9') || ch == '_' || (ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z');
+    }
+
+    private boolean isArr(Character ch1, Character ch2) {
+        return ch1 == '[' && ch2 == ']';
     }
 
     // MARK: Private steps
@@ -158,7 +173,7 @@ public class Parser {
         ArrayList<Tree> tmp = new ArrayList<>();
         if (tokens.get(curTokenIdx) == Token.NAME) {
             curTokenIdx += 1;
-            tmp.add(empty);
+            tmp.add(R());
         } else {
             expected("TYPE");
         }
@@ -190,9 +205,7 @@ public class Parser {
         } else if (tokens.get(curTokenIdx) == Token.NAME) {
             curTokenIdx += 1;
             tmp.add(empty);
-        } else if (tokens.get(curTokenIdx) != Token.LPAREN
-                && tokens.get(curTokenIdx) != Token.RPAREN
-                && tokens.get(curTokenIdx) != Token.COMMA) {
+        } else {
             expected("NAME");
         }
         return new Tree(Step.Z, tmp);
@@ -203,12 +216,22 @@ public class Parser {
         if (tokens.get(curTokenIdx) == Token.NAME) {
             curTokenIdx += 1;
             tmp.add(empty);
-        } else if (tokens.get(curTokenIdx) != Token.LPAREN
-                && tokens.get(curTokenIdx) != Token.RPAREN
-                && tokens.get(curTokenIdx) != Token.COMMA) {
+        } else {
             expected("NAME");
         }
         return new Tree(Step.M, tmp);
+    }
+
+    private Tree R() {
+        ArrayList<Tree> tmp = new ArrayList<>();
+        if (tokens.get(curTokenIdx) == Token.ARR) {
+            curTokenIdx += 1;
+            tmp.add(R());
+        } else {
+            curTokenIdx += 1;
+            tmp.add(empty);
+        }
+        return new Tree(Step.R, tmp);
     }
 
 
@@ -221,11 +244,11 @@ public class Parser {
     // MARK: - Inner classes
 
     enum Step {
-        S, A, B, T, N, Z, M, eps
+        S, A, B, T, N, Z, M, R, eps
     }
 
     enum Token {
-        LPAREN, RPAREN, END, SEMICOLON, ASTERISK, NAME, COMMA, AMPERSAND
+        LPAREN, RPAREN, END, SEMICOLON, ASTERISK, NAME, COMMA, AMPERSAND, ARR
     }
 
     static class Tree {

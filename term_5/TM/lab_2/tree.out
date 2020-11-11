@@ -1,15 +1,13 @@
 S
 	T
-		eps
+		R
+			R
+				eps
 	N
-		Z
-			eps
 	A
 		T
-			eps
+			R
+				eps
 		N
-			Z
-				Z
-					eps
 		B
 

@@ -2,7 +2,9 @@
 
 ***
 
-* T -> `Name+` eps
+* T -> `Name` R
+    * R -> `[]`R
+    * R -> eps
 
 ***
 
