@@ -1,0 +1,4 @@
+INPUT:image	GOLDEN:result	HINT:text
+https://tlk.s3.yandex.net/sdc/photos/91b271fa927545d0ee74050c4d27accd.jpg	ok	There are two traffic lights with red signal which are relatively far away.
+https://tlk.s3.yandex.net/sdc/photos/026ed5d9832ddfb0a3e45cca7910ccea.jpg	bad	There is no traffic lights.
+https://tlk.s3.yandex.net/sdc/photos/87a53411390f2ad3b16c8d3894490687.jpg	ok	There are two traffic lights with green signal.

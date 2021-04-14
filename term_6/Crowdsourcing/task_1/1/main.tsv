@@ -1,0 +1,98 @@
+INPUT:image	GOLDEN:result	HINT:text	TASK:id	TASK:overlap	TASK:remaining_overlap
+https://tlk.s3.yandex.net/sdc/photos/89c0201219811d5dcbe0c24933537377.jpg	bad		00014d6bae--603b71ed366a7449156cef97	infinite	infinite
+https://tlk.s3.yandex.net/sdc/photos/95b0868f43ab402d7d52c026be16b860.jpg	bad		00014d6bae--603b71ed366a7449156cefa0	infinite	infinite
+https://tlk.s3.yandex.net/sdc/photos/95fc5eaef6c05bf14362a95f27c1b2e0.jpg	bad		00014d6bae--603b71ed366a7449156cefa2	infinite	infinite
+https://tlk.s3.yandex.net/sdc/photos/003f29034f7614b3f16d11df05565210.jpg	bad		00014d6bae--603b71ed366a7449156cefa7	infinite	infinite
+https://tlk.s3.yandex.net/sdc/photos/97bc142ed77f7a006f70e786be07a081.jpg	ok		00014d6bae--603b71ed366a7449156cefa4	infinite	infinite
+https://tlk.s3.yandex.net/sdc/photos/89a050d8b9ebd4bedb11e9074148111b.jpg	ok		00014d6bae--603b71ed366a7449156cef95	infinite	infinite
+https://tlk.s3.yandex.net/sdc/photos/88f7a7c8e6e724d0f7a3600d008fd1f0.jpg	bad		00014d6bae--603b71ed366a7449156cef94	infinite	infinite
+https://tlk.s3.yandex.net/sdc/photos/93b403056e13ed42a39d9474885e7e3a.jpg	ok		00014d6bae--603b71ed366a7449156cef9d	infinite	infinite
+https://tlk.s3.yandex.net/sdc/photos/94b2b799453046e9f7dd4d892f04e67b.jpg	ok		00014d6bae--603b71ed366a7449156cef9e	infinite	infinite
+https://tlk.s3.yandex.net/sdc/photos/88a471d4011d2ced1aeb067f1953fec3.jpg	ok		00014d6bae--603b71ed366a7449156cef93	infinite	infinite
+https://tlk.s3.yandex.net/sdc/photos/047b88371e82efc80ee5c82414491e27.jpg			00014d6bae--603b71ed366a7449156cefac	3	3
+https://tlk.s3.yandex.net/sdc/photos/039f4c147a7755079ccf1f52bd651947.jpg			00014d6bae--603b71ed366a7449156cefab	3	3
+https://tlk.s3.yandex.net/sdc/photos/021dfd3095f1b331a387226b8c1b3b5d.jpg			00014d6bae--603b71ed366a7449156cefa9	3	3
+https://tlk.s3.yandex.net/sdc/photos/011debbc124c9b3c84ab4469eef7f499.jpg			00014d6bae--603b71ed366a7449156cefa8	3	3
+https://tlk.s3.yandex.net/sdc/photos/99d9af4a2eae609a0620d1fadd884d71.jpg			00014d6bae--603b71ed366a7449156cefa6	3	3
+https://tlk.s3.yandex.net/sdc/photos/98ce35ed7085f227d6a5e91f1f9a8577.jpg			00014d6bae--603b71ed366a7449156cefa5	3	3
+https://tlk.s3.yandex.net/sdc/photos/96d19bde3e2ec4fef0ac64234dcd0ff9.jpg			00014d6bae--603b71ed366a7449156cefa3	3	3
+https://tlk.s3.yandex.net/sdc/photos/95d65b25a480680bd7d2b564ba673d54.jpg			00014d6bae--603b71ed366a7449156cefa1	3	3
+https://tlk.s3.yandex.net/sdc/photos/94f3273cd98df2bad9e730edee430df3.jpg			00014d6bae--603b71ed366a7449156cef9f	3	3
+https://tlk.s3.yandex.net/sdc/photos/92ba1ff244d8242fd361cca1b61da79c.jpg			00014d6bae--603b71ed366a7449156cef9c	3	3
+https://tlk.s3.yandex.net/sdc/photos/90dfecb3d17d3deecdc81924e9fb0da5.jpg			00014d6bae--603b71ed366a7449156cef9a	3	3
+https://tlk.s3.yandex.net/sdc/photos/90d8ac849126250bdfbc0eab77d651d7.jpg			00014d6bae--603b71ed366a7449156cef99	3	3
+https://tlk.s3.yandex.net/sdc/photos/89fb72a976caac9863cd718a1e3ea627.jpg			00014d6bae--603b71ed366a7449156cef98	3	3
+https://tlk.s3.yandex.net/sdc/photos/89c05415bee2487a5364fa3d754aea3c.jpg			00014d6bae--603b71ed366a7449156cef96	3	3
+https://tlk.s3.yandex.net/sdc/photos/86b6894de9b03371085409bbff5b8036.jpg			00014d6bae--603b71ed366a7449156cef91	3	3
+https://tlk.s3.yandex.net/sdc/photos/85f3203db1fef80ec35e2152717b0c85.jpg			00014d6bae--603b71ed366a7449156cef90	3	3
+https://tlk.s3.yandex.net/sdc/photos/85b42b409c987ef0a4128bfe4fdfdeea.jpg			00014d6bae--603b71ed366a7449156cef8f	3	3
+https://tlk.s3.yandex.net/sdc/photos/85ab188be5dddef907ded786209dc620.jpg			00014d6bae--603b71ed366a7449156cef8e	3	3
+https://tlk.s3.yandex.net/sdc/photos/83c0fa6d587b3956e653a78ffee97b7d.jpg			00014d6bae--603b71ed366a7449156cef8d	3	3
+https://tlk.s3.yandex.net/sdc/photos/82b6181a95f22023cba5a3825ea73e75.jpg			00014d6bae--603b71ed366a7449156cef8c	3	3
+https://tlk.s3.yandex.net/sdc/photos/81ef09c2d750698180d5c3d44ccac251.jpg			00014d6bae--603b71ed366a7449156cef8b	3	3
+https://tlk.s3.yandex.net/sdc/photos/81baf79710879eb903e503552ee6e1ee.jpg			00014d6bae--603b71ed366a7449156cef8a	3	3
+https://tlk.s3.yandex.net/sdc/photos/80c7e1b7faa08a6d9e0141eb5b104e4a.jpg			00014d6bae--603b71ed366a7449156cef89	3	3
+https://tlk.s3.yandex.net/sdc/photos/79f9a52e7ceb003f962a837db9a5298f.jpg			00014d6bae--603b71ed366a7449156cef88	3	3
+https://tlk.s3.yandex.net/sdc/photos/79c3e249e25521d18c1de820c28f75b3.jpg			00014d6bae--603b71ed366a7449156cef87	3	3
+https://tlk.s3.yandex.net/sdc/photos/77f8f8d2cd9473419be6d8eedd673337.jpg			00014d6bae--603b71ed366a7449156cef86	3	3
+https://tlk.s3.yandex.net/sdc/photos/77cfcd8a88730dba788c3210262f63ac.jpg			00014d6bae--603b71ed366a7449156cef85	3	3
+https://tlk.s3.yandex.net/sdc/photos/76d378231cdb929304a8ff95aecd9ad5.jpg			00014d6bae--603b71ed366a7449156cef84	3	3
+https://tlk.s3.yandex.net/sdc/photos/76d20160bb15c3f57e8a4e4906c38d07.jpg			00014d6bae--603b71ed366a7449156cef83	3	3
+https://tlk.s3.yandex.net/sdc/photos/76c6ba623478ff2eef1b073e726c1683.jpg			00014d6bae--603b71ed366a7449156cef82	3	3
+https://tlk.s3.yandex.net/sdc/photos/75fa6755770d4052b6bfea556fc9a847.jpg			00014d6bae--603b71ed366a7449156cef81	3	3
+https://tlk.s3.yandex.net/sdc/photos/74cfa35f68e85c49278fd7d443548913.jpg			00014d6bae--603b71ed366a7449156cef80	3	3
+https://tlk.s3.yandex.net/sdc/photos/74c724a2aa9cb2abbd3cffe0c65b5e0b.jpg			00014d6bae--603b71ed366a7449156cef7f	3	3
+https://tlk.s3.yandex.net/sdc/photos/74a50d5f5f03296582437141f6ab88c4.jpg			00014d6bae--603b71ed366a7449156cef7e	3	3
+https://tlk.s3.yandex.net/sdc/photos/73d331fac1bcc3a2df0facf83d16d2ca.jpg			00014d6bae--603b71ed366a7449156cef7d	3	3
+https://tlk.s3.yandex.net/sdc/photos/73cbef226ef948c8f4f832e7e0d08c75.jpg			00014d6bae--603b71ed366a7449156cef7c	3	3
+https://tlk.s3.yandex.net/sdc/photos/73b07258c050f160b015a7ade0098c0a.jpg			00014d6bae--603b71ed366a7449156cef7b	3	3
+https://tlk.s3.yandex.net/sdc/photos/73a85fb1b0f4e2e3fcb6eab9d81f7f7c.jpg			00014d6bae--603b71ed366a7449156cef7a	3	3
+https://tlk.s3.yandex.net/sdc/photos/72ec3c92bc577defb7b5c11d48c5f697.jpg			00014d6bae--603b71ed366a7449156cef79	3	3
+https://tlk.s3.yandex.net/sdc/photos/69ff5c47cb39640885da5e1e21aa8e7c.jpg			00014d6bae--603b71ed366a7449156cef78	3	3
+https://tlk.s3.yandex.net/sdc/photos/68a8377b4755e6f7e1d2401778480e3f.jpg			00014d6bae--603b71ed366a7449156cef77	3	3
+https://tlk.s3.yandex.net/sdc/photos/67a10c702014f3b591b0d5ed7a322cf6.jpg			00014d6bae--603b71ed366a7449156cef76	3	3
+https://tlk.s3.yandex.net/sdc/photos/66fe5807f8b7716e00649207b9e09298.jpg			00014d6bae--603b71ed366a7449156cef75	3	3
+https://tlk.s3.yandex.net/sdc/photos/66f2bbb4c3c79ffa45e65b8fbadbec47.jpg			00014d6bae--603b71ed366a7449156cef74	3	3
+https://tlk.s3.yandex.net/sdc/photos/66e236cd1d3dc91a0cf8aee50fa70e5a.jpg			00014d6bae--603b71ed366a7449156cef73	3	3
+https://tlk.s3.yandex.net/sdc/photos/64c378bef12e246ec95741e10f48fd58.jpg			00014d6bae--603b71ed366a7449156cef72	3	3
+https://tlk.s3.yandex.net/sdc/photos/61ffd08761388c846294ae6871c2c1aa.jpg			00014d6bae--603b71ed366a7449156cef71	3	3
+https://tlk.s3.yandex.net/sdc/photos/61e34a7e676cf8b8c3de79b6bbf426b4.jpg			00014d6bae--603b71ed366a7449156cef70	3	3
+https://tlk.s3.yandex.net/sdc/photos/61df9ca2f6aa01835a03fdf43ff1c417.jpg			00014d6bae--603b71ed366a7449156cef6f	3	3
+https://tlk.s3.yandex.net/sdc/photos/61d9bf2d60d8ee0e3cc572cdc6b092b3.jpg			00014d6bae--603b71ed366a7449156cef6e	3	3
+https://tlk.s3.yandex.net/sdc/photos/61af23f058452fde125c10fb7ce2b245.jpg			00014d6bae--603b71ed366a7449156cef6d	3	3
+https://tlk.s3.yandex.net/sdc/photos/61a575cb735c56718ef34ceb0223b17f.jpg			00014d6bae--603b71ed366a7449156cef6c	3	3
+https://tlk.s3.yandex.net/sdc/photos/60e8f4ed537a474a27b3185f59bf4c83.jpg			00014d6bae--603b71ed366a7449156cef6b	3	3
+https://tlk.s3.yandex.net/sdc/photos/60be32b05d73de0492c4d55b2466fd21.jpg			00014d6bae--603b71ed366a7449156cef6a	3	3
+https://tlk.s3.yandex.net/sdc/photos/60b73d8e00664267dc55e12c1735582d.jpg			00014d6bae--603b71ed366a7449156cef69	3	3
+https://tlk.s3.yandex.net/sdc/photos/60a15ecc661069b484a023e7966131d1.jpg			00014d6bae--603b71ed366a7449156cef68	3	3
+https://tlk.s3.yandex.net/sdc/photos/60a3fb59b78411a20106c36c79718af2.jpg			00014d6bae--603b71ed366a7449156cef67	3	3
+https://tlk.s3.yandex.net/sdc/photos/59b71c485c8dbb76328abe673a7bd3bb.jpg			00014d6bae--603b71ed366a7449156cef66	3	3
+https://tlk.s3.yandex.net/sdc/photos/58fbe5d514ccb592bc238d7313c0bea5.jpg			00014d6bae--603b71ed366a7449156cef65	3	3
+https://tlk.s3.yandex.net/sdc/photos/58ceb3c4548f8a7f0b065c6519533ba6.jpg			00014d6bae--603b71ed366a7449156cef64	3	3
+https://tlk.s3.yandex.net/sdc/photos/58cdb79f3227daceffe8fc643474dc2c.jpg			00014d6bae--603b71ed366a7449156cef63	3	3
+https://tlk.s3.yandex.net/sdc/photos/58aec2d42a643800d10719e3b16cecb9.jpg			00014d6bae--603b71ed366a7449156cef62	3	3
+https://tlk.s3.yandex.net/sdc/photos/57b7a6c68ce49d49e663a0c09b280edd.jpg			00014d6bae--603b71ed366a7449156cef61	3	3
+https://tlk.s3.yandex.net/sdc/photos/56f447ffb7e3c1a7951327f94592bf93.jpg			00014d6bae--603b71ed366a7449156cef60	3	3
+https://tlk.s3.yandex.net/sdc/photos/55d96fbd30d92766358173b4c9eef59f.jpg			00014d6bae--603b71ed366a7449156cef5f	3	3
+https://tlk.s3.yandex.net/sdc/photos/55a714b1069fedad420598e62d05431d.jpg			00014d6bae--603b71ed366a7449156cef5e	3	3
+https://tlk.s3.yandex.net/sdc/photos/53ef8e6808dcc28faccda7c67f906a1e.jpg			00014d6bae--603b71ed366a7449156cef5d	3	3
+https://tlk.s3.yandex.net/sdc/photos/53d989d52a9b781c228951348119d897.jpg			00014d6bae--603b71ed366a7449156cef5c	3	3
+https://tlk.s3.yandex.net/sdc/photos/51ed99212a2db5e4f063948acf814a5d.jpg			00014d6bae--603b71ed366a7449156cef5b	3	3
+https://tlk.s3.yandex.net/sdc/photos/50fe8dd762c78e4a41fff147d278ff84.jpg			00014d6bae--603b71ed366a7449156cef5a	3	3
+https://tlk.s3.yandex.net/sdc/photos/50e9999f905b401d6a57601e125fecf3.jpg			00014d6bae--603b71ed366a7449156cef59	3	3
+https://tlk.s3.yandex.net/sdc/photos/50c27cbfda03aa04f9583d6684b459e5.jpg			00014d6bae--603b71ed366a7449156cef58	3	3
+https://tlk.s3.yandex.net/sdc/photos/49f89a0d62cbf22772d6e39fd19ff3b7.jpg			00014d6bae--603b71ed366a7449156cef57	3	3
+https://tlk.s3.yandex.net/sdc/photos/48a1fad2c6cbeb37797611a50a5b8594.jpg			00014d6bae--603b71ed366a7449156cef56	3	3
+https://tlk.s3.yandex.net/sdc/photos/47f3cdb070410e34a2cf958824f5c1ed.jpg			00014d6bae--603b71ed366a7449156cef55	3	3
+https://tlk.s3.yandex.net/sdc/photos/46d84d0e943237c30ef367a08287b69c.jpg			00014d6bae--603b71ed366a7449156cef54	3	3
+https://tlk.s3.yandex.net/sdc/photos/44a615847f37a1f166897b9cdaff8ce7.jpg			00014d6bae--603b71ed366a7449156cef53	3	3
+https://tlk.s3.yandex.net/sdc/photos/43e7b696a868bda3e5784e4ee7d7da94.jpg			00014d6bae--603b71ed366a7449156cef52	3	3
+https://tlk.s3.yandex.net/sdc/photos/43aae0e75fd3f41625bd980c5c94f6fa.jpg			00014d6bae--603b71ed366a7449156cef51	3	3
+https://tlk.s3.yandex.net/sdc/photos/42fff24b2232b7157303ae7f83f60b89.jpg			00014d6bae--603b71ed366a7449156cef50	3	3
+https://tlk.s3.yandex.net/sdc/photos/41ecd55426ccfe683816f6112b4e7df8.jpg			00014d6bae--603b71ed366a7449156cef4f	3	3
+https://tlk.s3.yandex.net/sdc/photos/41aa3e81571217d3ddb5df3abbb42db1.jpg			00014d6bae--603b71ed366a7449156cef4e	3	3
+https://tlk.s3.yandex.net/sdc/photos/39e56534a1e298eadd47812c73bdae9f.jpg			00014d6bae--603b71ed366a7449156cef4d	3	3
+https://tlk.s3.yandex.net/sdc/photos/38e7afcb2f456ca8a33a072dba9756d7.jpg			00014d6bae--603b71ed366a7449156cef4c	3	3
+https://tlk.s3.yandex.net/sdc/photos/37c2dec6d64b8ff777f9db625f03d71f.jpg			00014d6bae--603b71ed366a7449156cef4b	3	3
+https://tlk.s3.yandex.net/sdc/photos/37bb89ba2819bb4a34242135bc6f003f.jpg			00014d6bae--603b71ed366a7449156cef4a	3	3
+https://tlk.s3.yandex.net/sdc/photos/36c1862a6710eeae34891fc2233dfbf3.jpg			00014d6bae--603b71ed366a7449156cef49	3	3

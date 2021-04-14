@@ -1,0 +1,55 @@
+INPUT:assignment_id	INPUT:image	INPUT:selection	OUTPUT:result	CONFIDENCE:result	GOLDEN:result	
+00014d7907--603b93f405fe9e7bbc0c15a8	https://tlk.s3.yandex.net/sdc/photos/66e236cd1d3dc91a0cf8aee50fa70e5a.jpg		OK	99.99%		
+00014d7907--603b93dc8f3a5b0301762657	https://tlk.s3.yandex.net/sdc/photos/50c27cbfda03aa04f9583d6684b459e5.jpg		OK	98.74%		
+00014d7907--603b941254b7e0182020ecdc	https://tlk.s3.yandex.net/sdc/photos/039f4c147a7755079ccf1f52bd651947.jpg		OK	99.96%		
+00014d7907--603b93df322af671cc669e52	https://tlk.s3.yandex.net/sdc/photos/42fff24b2232b7157303ae7f83f60b89.jpg		BAD	99.98%		
+00014d7907--603b93ddcef1653f006f0ca5	https://tlk.s3.yandex.net/sdc/photos/89a050d8b9ebd4bedb11e9074148111b.jpg		BAD	99.97%		
+00014d7907--603b93ecdc3e427f2b45e81d	https://tlk.s3.yandex.net/sdc/photos/73b07258c050f160b015a7ade0098c0a.jpg		OK	99.99%		
+00014d7907--603b93fd61baae35d7d97f4d	https://tlk.s3.yandex.net/sdc/photos/61d9bf2d60d8ee0e3cc572cdc6b092b3.jpg		OK	98.73%		
+00014d7907--603b93fda969b659d6d72d00	https://tlk.s3.yandex.net/sdc/photos/79f9a52e7ceb003f962a837db9a5298f.jpg		OK	99.79%		
+00014d7907--603b94090ed6b503777d8e34	https://tlk.s3.yandex.net/sdc/photos/83c0fa6d587b3956e653a78ffee97b7d.jpg		OK	100.00%	OK	
+00014d7907--603b93fe0ed6b503777d8d9c	https://tlk.s3.yandex.net/sdc/photos/60b73d8e00664267dc55e12c1735582d.jpg		BAD	99.97%		
+00014d7907--603b93b4cf91f324854456b0	https://tlk.s3.yandex.net/sdc/photos/60e8f4ed537a474a27b3185f59bf4c83.jpg		OK	96.90%		
+00014d7907--603b93debfb3845c39f15880	https://tlk.s3.yandex.net/sdc/photos/72ec3c92bc577defb7b5c11d48c5f697.jpg		OK	98.74%		
+00014d7907--603b94050ed6b503777d8e06	https://tlk.s3.yandex.net/sdc/photos/89fb72a976caac9863cd718a1e3ea627.jpg		OK	99.99%		
+00014d7907--603b93b4cbcf512b7fd48bf4	https://tlk.s3.yandex.net/sdc/photos/93b403056e13ed42a39d9474885e7e3a.jpg		BAD	99.97%		
+00014d7907--603b966505fe9e7bbc0c3706	https://tlk.s3.yandex.net/sdc/photos/80c7e1b7faa08a6d9e0141eb5b104e4a.jpg		OK	99.96%		
+00014d7907--603b940949078523cb0a736d	https://tlk.s3.yandex.net/sdc/photos/73a85fb1b0f4e2e3fcb6eab9d81f7f7c.jpg		BAD	99.90%		
+00014d7907--603b93dd71fc4c65e3123094	https://tlk.s3.yandex.net/sdc/photos/94b2b799453046e9f7dd4d892f04e67b.jpg		BAD	99.97%		
+00014d7907--603b93fb3c636f34071e5d3c	https://tlk.s3.yandex.net/sdc/photos/49f89a0d62cbf22772d6e39fd19ff3b7.jpg		BAD	99.97%		
+00014d7907--603b93fa7d73695f74869b25	https://tlk.s3.yandex.net/sdc/photos/60a3fb59b78411a20106c36c79718af2.jpg		BAD	99.97%		
+00014d7907--603b93decbcf512b7fd48eb3	https://tlk.s3.yandex.net/sdc/photos/56f447ffb7e3c1a7951327f94592bf93.jpg		OK	99.99%		
+00014d7907--603b9405dc3e427f2b45e984	https://tlk.s3.yandex.net/sdc/photos/94f3273cd98df2bad9e730edee430df3.jpg		OK	98.16%		
+00014d7907--603b93dd552df05f03c742c3	https://tlk.s3.yandex.net/sdc/photos/68a8377b4755e6f7e1d2401778480e3f.jpg		OK	98.74%		
+00014d7907--603b93cf8f5d4e00e545205d	https://tlk.s3.yandex.net/sdc/photos/92ba1ff244d8242fd361cca1b61da79c.jpg		BAD	99.97%		
+00014d7907--603b941444796245da1b7c78	https://tlk.s3.yandex.net/sdc/photos/37c2dec6d64b8ff777f9db625f03d71f.jpg		OK	99.96%		
+00014d7907--603b93f171fc4c65e3123169	https://tlk.s3.yandex.net/sdc/photos/74c724a2aa9cb2abbd3cffe0c65b5e0b.jpg		OK	99.99%		
+00014d7907--603b942f3c636f34071e5f8c	https://tlk.s3.yandex.net/sdc/photos/61e34a7e676cf8b8c3de79b6bbf426b4.jpg		BAD	99.99%		
+00014d7907--603b93ecdc3e427f2b45e813	https://tlk.s3.yandex.net/sdc/photos/97bc142ed77f7a006f70e786be07a081.jpg		OK	99.99%		
+00014d7907--603b93c3cc257336572025a6	https://tlk.s3.yandex.net/sdc/photos/60be32b05d73de0492c4d55b2466fd21.jpg		OK	99.98%		
+00014d7907--603b940171fc4c65e3123252	https://tlk.s3.yandex.net/sdc/photos/58aec2d42a643800d10719e3b16cecb9.jpg		BAD	99.84%		
+00014d7907--603b93c18f3a5b03017624ff	https://tlk.s3.yandex.net/sdc/photos/91b271fa927545d0ee74050c4d27accd.jpg		OK	96.90%		
+00014d7907--603b93e25563fe2270aa5834	https://tlk.s3.yandex.net/sdc/photos/96d19bde3e2ec4fef0ac64234dcd0ff9.jpg		BAD	99.98%		
+00014d7907--603b940cbfb3845c39f15ac9	https://tlk.s3.yandex.net/sdc/photos/47f3cdb070410e34a2cf958824f5c1ed.jpg		OK	100.00%	OK	
+00014d7907--603b93e9552df05f03c743e5	https://tlk.s3.yandex.net/sdc/photos/011debbc124c9b3c84ab4469eef7f499.jpg		BAD	99.98%		
+00014d7907--603b93e16d041c462a84aebd	https://tlk.s3.yandex.net/sdc/photos/75fa6755770d4052b6bfea556fc9a847.jpg		BAD	99.98%		
+00014d7907--603b940f43e6010d0db57e28	https://tlk.s3.yandex.net/sdc/photos/44a615847f37a1f166897b9cdaff8ce7.jpg		BAD	99.99%		
+00014d7907--603b941144796245da1b7c06	https://tlk.s3.yandex.net/sdc/photos/61af23f058452fde125c10fb7ce2b245.jpg		BAD	100.00%	BAD	
+00014d7907--603b93f5e6297e139aa0a2f0	https://tlk.s3.yandex.net/sdc/photos/57b7a6c68ce49d49e663a0c09b280edd.jpg		OK	99.79%		
+00014d7907--603b9414552df05f03c7468e	https://tlk.s3.yandex.net/sdc/photos/38e7afcb2f456ca8a33a072dba9756d7.jpg		OK	99.96%		
+00014d7907--603b9407322af671cc66a18f	https://tlk.s3.yandex.net/sdc/photos/88a471d4011d2ced1aeb067f1953fec3.jpg		BAD	81.88%		
+00014d7907--603b94038f3a5b03017627d5	https://tlk.s3.yandex.net/sdc/photos/37bb89ba2819bb4a34242135bc6f003f.jpg		BAD	81.88%		
+00014d7907--603b9408462de9226e233718	https://tlk.s3.yandex.net/sdc/photos/58fbe5d514ccb592bc238d7313c0bea5.jpg		BAD	81.88%		
+00014d7907--603b940fcef1653f006f0f22	https://tlk.s3.yandex.net/sdc/photos/76c6ba623478ff2eef1b073e726c1683.jpg		BAD	100.00%	BAD	
+00014d7907--603b93f18f3a5b0301762720	https://tlk.s3.yandex.net/sdc/photos/77cfcd8a88730dba788c3210262f63ac.jpg		BAD	99.98%		
+00014d7907--603b93d07dc9ce73e6d7a84d	https://tlk.s3.yandex.net/sdc/photos/73d331fac1bcc3a2df0facf83d16d2ca.jpg		BAD	99.97%		
+00014d7907--603b93f77dc9ce73e6d7aac2	https://tlk.s3.yandex.net/sdc/photos/047b88371e82efc80ee5c82414491e27.jpg		OK	98.73%		
+00014d7907--603b93abcf91f32485445621	https://tlk.s3.yandex.net/sdc/photos/021dfd3095f1b331a387226b8c1b3b5d.jpg		OK	99.99%		
+00014d7907--603b93d5cbcf512b7fd48df9	https://tlk.s3.yandex.net/sdc/photos/67a10c702014f3b591b0d5ed7a322cf6.jpg		BAD	99.97%		
+00014d7907--603b9408552df05f03c7461b	https://tlk.s3.yandex.net/sdc/photos/51ed99212a2db5e4f063948acf814a5d.jpg		OK	99.99%		
+00014d7907--603b93ca54b7e0182020e494	https://tlk.s3.yandex.net/sdc/photos/85ab188be5dddef907ded786209dc620.jpg		BAD	99.97%		
+00014d7907--603b93ca3c636f34071e5b5d	https://tlk.s3.yandex.net/sdc/photos/53d989d52a9b781c228951348119d897.jpg		OK	99.99%		
+00014d7907--603b940461baae35d7d98095	https://tlk.s3.yandex.net/sdc/photos/90d8ac849126250bdfbc0eab77d651d7.jpg		BAD	81.88%		
+00014d7907--603b93c8901bc7123a3d7683	https://tlk.s3.yandex.net/sdc/photos/58ceb3c4548f8a7f0b065c6519533ba6.jpg		OK	99.99%		
+00014d7907--603b9400bfb3845c39f15a49	https://tlk.s3.yandex.net/sdc/photos/50fe8dd762c78e4a41fff147d278ff84.jpg		BAD	99.97%		
+00014d7907--603b93dc552df05f03c74287	https://tlk.s3.yandex.net/sdc/photos/87a53411390f2ad3b16c8d3894490687.jpg		OK	99.99%		

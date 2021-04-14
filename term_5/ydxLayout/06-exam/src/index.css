@@ -1,0 +1,36 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    ". . master-card visa"
+    "card-num card-num card-num card-num"
+    "valid-text valid-text . ."
+    "mm gg . .";
+}
+
+.master-card {
+    grid-area: master-card;
+    background-image: url("img/iu.png");
+}
+
+.visa {
+    grid-area: visa;
+}
+
+.card-num {
+    grid-area: card-num;
+}
+
+.valid-text {
+    grid-area: valid-text;
+}
+
+.mm {
+    grid-area: mm;
+}
+
+.gg {
+    grid-area: gg;
+}
