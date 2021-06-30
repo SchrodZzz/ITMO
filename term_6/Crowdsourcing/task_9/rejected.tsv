@@ -1,0 +1,1 @@
+INPUT:name	INPUT:position	OUTPUT:photo	OUTPUT:comment	OUTPUT:worker_coordinates	GOLDEN:comment	GOLDEN:worker_coordinates	HINT:text	HINT:default_language	ASSIGNMENT:link	ASSIGNMENT:assignment_id	ASSIGNMENT:worker_id	ASSIGNMENT:status	ASSIGNMENT:started	AI:latitude	AI:longitude	ACCEPT:verdict	ACCEPT:comment
