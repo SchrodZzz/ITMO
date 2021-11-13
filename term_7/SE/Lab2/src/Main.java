@@ -1,7 +1,7 @@
 import api.Client;
 import api.NewsFeedManager;
 import response.ResponseParser;
-import response.URLReader;
+import request.URLReader;
 import utils.TimeUtils;
 
 import java.text.DateFormat;
@@ -33,7 +33,7 @@ public class Main {
         }
 
         try {
-            int result[] = manager.getHashTagOccurrence(hashTagText, timeInterval);
+            int[] result = manager.getHashTagOccurrence(hashTagText, timeInterval);
             for (int i = 0; i < timeInterval; i++) {
                 String toPrint = String.format(
                         "In time interval from %s till %s was %d feeds with hashtag #%s",

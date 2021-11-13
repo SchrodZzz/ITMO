@@ -7,7 +7,7 @@ import org.junit.jupiter.api.TestInstance;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import response.ResponseParser;
-import response.URLReader;
+import request.URLReader;
 
 import java.util.Arrays;
 import java.util.Collections;

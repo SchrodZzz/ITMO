@@ -2,7 +2,7 @@ package api;
 
 import com.google.gson.JsonObject;
 import request.URLBuilder;
-import response.URLReader;
+import request.URLReader;
 import response.ResponseParser;
 import utils.TimeUtils;
 
