@@ -1,4 +1,4 @@
-LINES_SEPARATOR = '============================'
+LINES_SEPARATOR = '👉---------------------------👈\n'
 
 
 def get_indention(indention_level):
